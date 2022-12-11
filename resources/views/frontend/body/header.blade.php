@@ -47,7 +47,7 @@
                                 </ul>
                             </li>
 
-                             <li>Need help? Call Us: <strong class="text-brand"> + 1800 900</strong></li>
+                             <li>Contáctanos: <strong class="text-brand">777 11223</strong></li>
                            
                         </ul>
                     </div>
@@ -273,7 +273,7 @@
                             <ul>
                                 
                                 <li>
-                                    <a class="active" href="index.html">Home  </a>
+                                    <a class="active" href="index.html">Inicio  </a>
                                     
                                 </li>
                                 <li>
@@ -497,6 +497,8 @@
         </div>
     </div>
 </header>
+
+
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
@@ -522,7 +524,7 @@
                 <nav>
                     <ul class="mobile-menu font-heading">
                         <li class="menu-item-has-children">
-                            <a href="index.html">Home</a>
+                            <a href="index.html">Inicio</a>
                              
                         </li>
                         <li class="menu-item-has-children">
