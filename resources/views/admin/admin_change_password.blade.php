@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <input type="password" name="new_password_confirmation" class="form-control"
-                                        id="current_password" placeholder="Confirmar Nueva Contraseña" />
+                                        id="new_password_confirmation" placeholder="Confirmar Nueva Contraseña" />
 
                                     </div>
                                 </div>
