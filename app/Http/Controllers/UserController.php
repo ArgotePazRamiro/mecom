@@ -52,7 +52,12 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        $notification = array(
+            'message' => 'Desconexión Exitosa',
+            'alert-type' => 'success',
+        );
+
+        return redirect('/login')->with($notification);
     }
 
     public function UserUpdatePassword(Request $request)
