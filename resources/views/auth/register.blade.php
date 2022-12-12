@@ -72,7 +72,7 @@
                                                 <a href="page-privacy-policy.html"><i class="fi-rs-book-alt mr-5 text-muted"></i>Aprende más</a>
                                             </div>
                                             <div class="form-group mb-30">
-                                                <button type="submit" class="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">Submit &amp; Register</button>
+                                                <button type="submit" class="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">Registrarse</button>
                                             </div>
                                             <p class="font-xs text-muted"><strong>Nota:</strong>Sus datos personales se utilizarán para respaldar su experiencia en este sitio web, para administrar el acceso a su cuenta y para otros fines descritos en nuestra política de privacidad.</p>
                                         </form>

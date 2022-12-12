@@ -54,7 +54,7 @@
                                             @csrf
 
                                             <div class="form-group">
-                                                <input type="email" id="email" required="" name="email" placeholder="Nombre de Usuario o Email" />
+                                                <input type="email" id="email" required="" name="email" placeholder="Nombre de Usuario o Correo Electrónico" />
                                             </div>
                                             <div class="form-group">
                                                 <input required="" id="password" type="password" name="password" placeholder="Contraseña" />
