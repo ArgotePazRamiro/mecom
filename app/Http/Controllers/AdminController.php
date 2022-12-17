@@ -14,12 +14,12 @@ class AdminController extends Controller
 
         return view('admin.index');
 
-    }
+    }//End method
 
     public function AdminLogin()
     {
         return view('admin.admin_login');
-    }
+    }//End method
 
     public function AdminDestroy(Request $request)
     {
@@ -30,7 +30,7 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/admin/login');
-    }
+    }//End method
 
     public function AdminProfile()
     {
@@ -38,7 +38,7 @@ class AdminController extends Controller
         $adminData = User::find($id);
         return view('admin.admin_profile_view', compact('adminData'));
 
-    }
+    }//End method
 
     public function AdminProfileStore(Request $request)
     {
@@ -67,12 +67,12 @@ class AdminController extends Controller
 
         return redirect()->back()->with($notification);
         
-    }
+    }//End method
 
     public function AdminChangePassword()
     {
         return view('admin.admin_change_password');
-    }
+    }//End method
 
     public function AdminUpdatePassword(Request $request)
     {
@@ -93,7 +93,7 @@ class AdminController extends Controller
         ]);
         return back()->with("status", "Cambio de Contraseña exitoso");
 
-    }
+    }//End method
 
 
 }

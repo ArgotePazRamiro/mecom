@@ -14,7 +14,7 @@ class UserController extends Controller
         $id = Auth::user()->id;
         $userData = User::find($id);
         return view('index', compact('userData'));
-    }
+    }//End method
 
     public function UserProfileStore(Request $request)
     {
@@ -42,7 +42,7 @@ class UserController extends Controller
         );
 
         return redirect()->back()->with($notification);
-    }
+    }//End method
 
     public function UserLogout(Request $request)
     {
@@ -58,7 +58,7 @@ class UserController extends Controller
         );
 
         return redirect('/login')->with($notification);
-    }
+    }//End method
 
     public function UserUpdatePassword(Request $request)
     {
@@ -79,5 +79,5 @@ class UserController extends Controller
         ]);
         return back()->with("status", "Cambio de Contraseña exitoso");
 
-    }
+    }//End method
 }

@@ -14,12 +14,12 @@ class VendorController extends Controller
 
         return view('vendor.index');
 
-    }
+    }//End method
 
     public function VendorLogin()
     {
         return view('vendor.vendor_login');
-    }
+    }//End method
 
     public function VendorDestroy(Request $request)
     {
@@ -30,7 +30,7 @@ class VendorController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/vendor/login');
-    }
+    }//End method
 
     public function VendorProfile()
     {
@@ -38,7 +38,7 @@ class VendorController extends Controller
         $vendorData = User::find($id);
         return view('vendor.vendor_profile_view', compact('vendorData'));
 
-    }
+    }//End method
 
     public function VendorProfileStore(Request $request)
     {
@@ -69,12 +69,12 @@ class VendorController extends Controller
 
         return redirect()->back()->with($notification);
         
-    }
+    }//End method
 
     public function VendorChangePassword()
     {
         return view('vendor.vendor_change_password');
-    }
+    }//End method
 
     public function VendorUpdatePassword(Request $request)
     {
@@ -95,7 +95,7 @@ class VendorController extends Controller
         ]);
         return back()->with("status", "Cambio de Contraseña exitoso");
 
-    }
+    }//End method
 
 
 }
