@@ -5,19 +5,19 @@
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Marcas</div>
+        <div class="breadcrumb-title pe-3">Categorías</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Marcas Disponibles</li>
+                    <li class="breadcrumb-item active" aria-current="page">Categorías Disponibles</li>
                 </ol>
             </nav>
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <a href="{{ route('add.brand') }}" class="btn btn-primary"> Añadir Marca</a>
+                <a href="{{ route('add.category') }}" class="btn btn-primary"> Añadir Categoría</a>
             </div>
         </div>
     </div>
@@ -31,21 +31,21 @@
                     <thead>
                         <tr>
                             <th>Número de Serie</th>
-                            <th>Nombre de Marca</th>
+                            <th>Nombre de Categoría</th>
                             <th>Imagen</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ( $brands as $key => $item )
+                        @foreach ( $categories as $key => $item )
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ $item->brand_name }}</td>
-                            <td><img src="{{ asset($item->brand_image) }}" style="width:70px;height:40px"></td>
+                            <td>{{ $item->category_name }}</td>
+                            <td><img src="{{ asset($item->category_image) }}" style="width:70px;height:40px"></td>
                             <td>
-                                <a href="{{ route('edit.brand',$item->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('delete.brand', $item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
+                                <a href="{{ route('edit.category',$item->id) }}" class="btn btn-info">Editar</a>
+                                <a href="{{ route('delete.category', $item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
                             </td>
                         </tr>
                         @endforeach
@@ -54,7 +54,7 @@
                     <tfoot>
                         <tr>
                             <th>Número de Serie</th>
-                            <th>Nombre de Marca</th>
+                            <th>Nombre de Categoría</th>
                             <th>Imagen</th>
                             <th>Acción</th>
                         </tr>

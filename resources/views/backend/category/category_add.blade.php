@@ -7,13 +7,13 @@
 <div class="page-content"> 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Añadir Marca</div>
+        <div class="breadcrumb-title pe-3">Añadir Categoría</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Añadir Marca</li>
+                    <li class="breadcrumb-item active" aria-current="page">Añadir Categoría</li>
                 </ol>
             </nav>
         </div>
@@ -31,24 +31,24 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form id="myForm" method="post" action="{{ route('store.brand') }}" enctype="multipart/form-data">
+                            <form id="myForm" method="post" action="{{ route('store.category') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Nombre de Marca</h6>
+                                        <h6 class="mb-0">Nombre de Categoría</h6>
                                     </div>
                                     <div class="form-group col-sm-9 text-secondary">
-                                        <input type="text" name="brand_name" class="form-control"/>
+                                        <input type="text" name="category_name" class="form-control"/>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Imagen de Marca</h6>
+                                        <h6 class="mb-0">Imagen de Categoría</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="file" name="brand_image" class="form-control" id="image" />
+                                        <input type="file" name="category_image" class="form-control" id="image" />
                                     </div>
                                 </div>
 
@@ -89,13 +89,13 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                brand_name:{
+                category_name:{
                     required: true,
                 },
             },
             messages: {
-                brand_name:{
-                    required: 'Por favor Ingrese el nombre de la Marca',
+                category_name:{
+                    required: 'Por favor Ingrese el nombre de la Categoría',
                 },
             },
             errorElement: 'span',
