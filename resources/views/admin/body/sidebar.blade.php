@@ -61,23 +61,35 @@
                
             </ul>
         </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manejo de Productos</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.product') }}"><i class="bx bx-right-arrow-alt"></i>Productos Disponibles</a>
+                </li>
+                <li> <a href="{{ route('add.product') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
+                </li>
+               
+            </ul>
+        </li>
         <li class="menu-label">UI Elements</li>
         
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
-                <div class="menu-title">eCommerce</div>
+                <div class="menu-title">Manejo de Vendedor</div>
             </a>
             <ul>
-                <li> <a href="ecommerce-products.html"><i class="bx bx-right-arrow-alt"></i>Products</a>
+                <li> <a href="{{ route('inactive.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedor Inactivo</a>
                 </li>
-                <li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
+                <li> <a href="{{ route('active.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedor Activo</a>
                 </li>
-                <li> <a href="ecommerce-add-new-products.html"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
-                </li>
-                <li> <a href="ecommerce-orders.html"><i class="bx bx-right-arrow-alt"></i>Orders</a>
-                </li>
+                
             </ul>
         </li>
         <li>
