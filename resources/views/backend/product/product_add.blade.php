@@ -26,7 +26,7 @@
             <h5 class="card-title">Añadir Nuevo Producto</h5>
             <hr/>
 
-            <form id="myForm" method="post" action="{{ route('store.category') }}" enctype="multipart/form-data">
+            <form id="myForm" method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-body mt-4">
@@ -36,7 +36,7 @@
                         
                                 <div class="form-group mb-3">
                                     <label for="inputProductTitle" class="form-label">Nombre de Producto</label>
-                                    <input type="text" name="product_name" class="form-control" id="inputProductTitle" placeholder="Enter product title">
+                                    <input type="text" name="product_name" class="form-control" id="inputProductTitle" placeholder="Ingrese Nombre del Producto">
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputProductTitle" class="form-label">Etiquetas de Producto</label>
@@ -161,7 +161,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-check">
                                                     <input class="form-check-input" name="special_deals" type="checkbox" value="1" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">Trato especial</label>
+                                                    <label class="form-check-label" for="flexCheckDefault">Trato Especial</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,7 +285,7 @@
             var data = $(this)[0].files; //this file data
              
             $.each(data, function(index, file){ //loop though each file
-                if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
+                if(/(\.|\/)(gif|jpe?g|png|webp)$/i.test(file.type)){ //check supported file type
                     var fRead = new FileReader(); //new filereader
                     fRead.onload = (function(file){ //trigger function on successful read
                     return function(e) {

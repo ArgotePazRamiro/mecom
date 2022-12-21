@@ -35,7 +35,7 @@
                             <th>Nombre de Producto</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
-                            <th>Descuento</th>
+                            <th>Precio con Descuento</th>
                             <th>Estado</th>
                             <th>Acción</th>
                         </tr>
@@ -68,7 +68,7 @@
                             <th>Nombre de Producto</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
-                            <th>Descuento</th>
+                            <th>Precio con Descuento</th>
                             <th>Estado</th>
                             <th>Acción</th>
                         </tr>
