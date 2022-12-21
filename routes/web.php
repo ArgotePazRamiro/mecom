@@ -72,7 +72,7 @@ Route::post('/vendor/register', [VendorController::class, 'VendorRegister'])->na
 
 
 
-// ADMIN DASHBOARD
+// ADMIN 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
