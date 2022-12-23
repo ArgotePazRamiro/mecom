@@ -5,8 +5,8 @@ $(function(){
 
   
                   Swal.fire({
-                    title: 'Esta Seguro?',
-                    text: "Eliminar estos datos?",
+                    title: '¿ Esta Seguro?',
+                    text: "¿ Desea Eliminar los datos?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -17,7 +17,7 @@ $(function(){
                       window.location.href = link
                       Swal.fire(
                         'Eliminado!',
-                        'La marca fue eliminada.',
+                        'Datos Eliminados Correctamente.',
                         'Éxito'
                       )
                     }
