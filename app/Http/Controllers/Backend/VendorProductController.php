@@ -12,27 +12,36 @@ use App\Models\Product;
 use App\Models\User;
 use Intervention\Image\Facades\Image;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class VendorProductController extends Controller
 {
-    public function AllProduct()
+    
+    public function VendorAllProduct()
     {
-
-        $products = Product::latest()->get();
-        return view('backend.product.product_all', compact('products'));
-
+        $id = Auth::user()->id;
+        $products = Product::where('vendor_id', $id)->latest()->get();
+        return view('vendor.backend.product.vendor_product_all', compact('products'));
+        
     }//End method
 
-    public function AddProduct()
+    public function VendorAddProduct()
     {
-        $activeVendor = User::where('status','active')->where('role','vendor')->latest()->get();
         $brands = Brand::latest()->get();
         $categories = Category::latest()->get();
-        return view('backend.product.product_add',compact('brands','categories','activeVendor'));
+        return view('vendor.backend.product.vendor_product_add',compact('brands','categories'));
 
     }//End method
 
-    public function StoreProduct(Request $request)
+    public function VendorGetSubCategory($category_id)
+    {
+        
+        $subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name','ASC')->get();
+        return json_encode($subcat);
+
+    }//End method
+
+    public function VendorStoreProduct(Request $request)
     {
         
         $image = $request->file('product_thambnail');
@@ -65,7 +74,7 @@ class ProductController extends Controller
             'special_deals' => $request->special_deals,
             
             'product_thambnail' => $save_url,
-            'vendor_id' => $request->vendor_id,
+            'vendor_id' => Auth::user()->id,
             'status' => 1,
             'created_at' => Carbon::now(),
 
@@ -93,28 +102,27 @@ class ProductController extends Controller
         /// End Multiple Image Upload ///
 
         $notification = array(
-            'message' => 'Producto Insertado Correctamente',
+            'message' => 'Vendedor Agregó Producto Correctamente',
             'alert-type' => 'success',
         );
 
-        return redirect()->route('all.product')->with($notification);
+        return redirect()->route('vendor.all.product')->with($notification);
 
     }//End method
 
-    public function EditProduct($id)
+    public function VendorEditProduct($id)
     {
         $multiImgs = MultiImg::where('product_id',$id)->get();
         
-        $activeVendor = User::where('status','active')->where('role','vendor')->latest()->get();
         $brands = Brand::latest()->get();
         $categories = Category::latest()->get();
         $subcategory = SubCategory::latest()->get();
         $products = Product::findOrFail($id);
-        return view('backend.product.product_edit',compact('brands','categories','activeVendor','products','subcategory','multiImgs'));
+        return view('vendor.backend.product.vendor_product_edit',compact('brands','categories','products','subcategory','multiImgs'));
 
     }//End method
 
-    public function UpdateProduct(Request $request)
+    public function VendorUpdateProduct(Request $request)
     {
 
         $product_id = $request->id;
@@ -143,23 +151,21 @@ class ProductController extends Controller
             'special_offer' => $request->special_offer,
             'special_deals' => $request->special_deals,
             
-            
-            'vendor_id' => $request->vendor_id,
             'status' => 1,
             'created_at' => Carbon::now(),
 
         ]);
 
         $notification = array(
-            'message' => 'Producto Actualizado Correctamente, Sin Modificar Imágenes',
+            'message' => 'Vendedor Actualizó Producto Correctamente, Sin Modificar Imágenes',
             'alert-type' => 'success',
         );
 
-        return redirect()->route('all.product')->with($notification);
+        return redirect()->route('vendor.all.product')->with($notification);
 
     }//End method
 
-    public function UpdateProductThambnail(Request $request)
+    public function VendorUpdateProductThabnail(Request $request)
     {
         
         $pro_id = $request->id;
@@ -182,7 +188,7 @@ class ProductController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Miniatura de Producto Actualizada Satisfactoriamente',
+            'message' => 'Vendedor Actualizó Miniatura de Producto Correctamente',
             'alert-type' => 'success',
         );
 
@@ -191,7 +197,7 @@ class ProductController extends Controller
     }//End method
 
     //Multi Image Update
-    public function UpdateProductMultiimage(Request $request)
+    public function VendorUpdateProductmultiImage(Request $request)
     {
         
         $imgs = $request->multi_img;
@@ -214,7 +220,7 @@ class ProductController extends Controller
         }//End Foreach
 
         $notification = array(
-            'message' => 'Imagen de Producto Actualizada Correctamente',
+            'message' => 'Vendedor Actualizó Imagen de Producto Correctamente',
             'alert-type' => 'success',
         );
 
@@ -222,7 +228,7 @@ class ProductController extends Controller
 
     }//End method
 
-    public function MultiImageDelete($id)
+    public function VendorMultiimgDelete($id)
     {
         $oldImg = MultiImg::findOrFail($id);
         unlink($oldImg->photo_name);
@@ -230,7 +236,7 @@ class ProductController extends Controller
         MultiImg::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'Imagen de Producto Eliminada Correctamente',
+            'message' => 'Vendedor Eliminó Imagen de Producto Correctamente',
             'alert-type' => 'success',
         );
 
@@ -238,7 +244,7 @@ class ProductController extends Controller
 
     }//End method
 
-    public function ProductInactive($id)
+    public function VendorProductInactive($id)
     {
         
         Product::findOrFail($id)->Update(['status' => 0]);
@@ -252,7 +258,7 @@ class ProductController extends Controller
         
     }//End method
 
-    public function ProductActive($id)
+    public function VendorProductActive($id)
     {
         
         Product::findOrFail($id)->Update(['status' => 1]);
@@ -266,7 +272,7 @@ class ProductController extends Controller
         
     }//End method
 
-    public function ProductDelete($id)
+    public function VendorProductDelete($id)
     {
         
         $product = Product::findOrFail($id);
@@ -280,13 +286,17 @@ class ProductController extends Controller
         }
 
         $notification = array(
-            'message' => 'Producto Eliminado Correctamente',
+            'message' => 'Vendedor Eliminó Producto Correctamente',
             'alert-type' => 'success',
         );
 
         return redirect()->back()->with($notification);
 
     }//End method
+
+
+
+
 
 
 }

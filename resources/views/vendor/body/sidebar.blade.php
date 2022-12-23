@@ -36,9 +36,9 @@
                 <div class="menu-title">Manejo de Productos</div>
             </a>
             <ul>
-                <li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Productos</a>
+                <li> <a href="{{ route('vendor.all.product') }}"><i class="bx bx-right-arrow-alt"></i>Productos</a>
                 </li>
-                <li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
+                <li> <a href="{{ route('vendor.add.product') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
                 </li>
             </ul>
         </li>
