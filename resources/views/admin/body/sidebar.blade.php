@@ -92,6 +92,21 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manejo de Banner</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.banner') }}"><i class="bx bx-right-arrow-alt"></i>Banner Disponibles</a>
+                </li>
+                <li> <a href="{{ route('add.banner') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Banner</a>
+                </li>
+               
+            </ul>
+        </li>
+
         <li class="menu-label">UI Elements</li>
         
         <li>

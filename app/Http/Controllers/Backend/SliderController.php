@@ -60,7 +60,7 @@ class SliderController extends Controller
     public function UpdateSlider(Request $request)
     {
         $slider_id = $request->id;
-        $old_img = $request->old_image;
+        $old_img = $request->old_img;
 
         if ($request->file('slider_image')) {
 
