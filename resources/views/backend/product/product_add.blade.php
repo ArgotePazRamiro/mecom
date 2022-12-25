@@ -87,11 +87,11 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputCostPerPrice" class="form-label">Código de Producto</label>
-                                        <input type="text" name="product_code" class="form-control" id="inputCostPerPrice" placeholder="00.00">
+                                        <input type="text" name="product_code" class="form-control" id="inputCostPerPrice" placeholder="0000ASDF">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputStarPoints" class="form-label">Cantidad de Producto</label>
-                                        <input type="text" name="product_qty" class="form-control" id="inputStarPoints" placeholder="00.00">
+                                        <input type="text" name="product_qty" class="form-control" id="inputStarPoints" placeholder="0000">
                                     </div>
 
                                     <div class="form-group col-12">
