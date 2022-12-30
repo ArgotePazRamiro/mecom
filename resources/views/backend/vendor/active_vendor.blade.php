@@ -50,7 +50,7 @@
                             <td>{{ $item->email }}</td>
                             <td> <span class="btn btn-success">{{ $item->status }}</span></td>
                             <td>
-                                <a href="{{ route('active.vendor.details',$item->id) }}" class="btn btn-info">Detalles Vendedor</a>
+                                <a href="{{ route('active.vendor.details',$item->id) }}" class="btn btn-info">Detalles</a>
                             </td>
                         </tr>
                         @endforeach
