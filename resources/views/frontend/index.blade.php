@@ -15,7 +15,7 @@
 
 <!--Banners-->
 
-@include('frontend.home.home_banners')
+@include('frontend.home.home_banner')
 
 
 
