@@ -30,7 +30,7 @@
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Número de Serie</th>
+                            <th>Serial</th>
                             <th>Imagen</th>
                             <th>Nombre de Producto</th>
                             <th>Precio</th>
@@ -100,7 +100,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Número de Serie</th>
+                            <th>Serial</th>
                             <th>Imagen</th>
                             <th>Nombre de Producto</th>
                             <th>Precio</th>
