@@ -40,6 +40,7 @@ $categories = App\Models\Category::orderBy('category_name','ASC')->get();
                                     <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug) }}">
 
                                         <img class="default-img" src="{{ asset($product->product_thambnail) }}" alt="" />
+                                        
                                     </a>
                                 </div>
                                 <div class="product-action-1">
