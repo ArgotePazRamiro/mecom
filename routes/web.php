@@ -9,11 +9,15 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Middleware\RedirectIfAuthenticated;
+
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
 
-use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Controllers\Frontend\IndexController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +42,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
     Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
 
-});//End Middleware
+}); //Group Middleware End
 
 
 require __DIR__.'/auth.php';
@@ -186,9 +190,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     });
 
-
-
 });//Admin Middleware End
+
+//Frontend Product Details All route
+
+Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
 
 
 
