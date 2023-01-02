@@ -139,7 +139,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-check">
                                                     <input class="form-check-input" name="hot_deals" type="checkbox" value="1" id="flexCheckDefault" {{ $products->hot_deals == 1 ? 'checked' : '' }}>
-                                                    <label class="form-check-label" for="flexCheckDefault">Mejores Ofertas</label>
+                                                    <label class="form-check-label" for="flexCheckDefault">Ofertas Calientes</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

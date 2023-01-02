@@ -1,7 +1,7 @@
 @php
 
 $products = App\Models\Product::where('status', 1)->orderBy('id', 'ASC')->limit(10)->get();
-$categories = App\Models\Category::orderBy('category_name','ASC')->get();
+$categories = App\Models\Category::orderBy('category_name','ASC')->limit(9)->get();
 
 @endphp
 
