@@ -60,6 +60,23 @@ class IndexController extends Controller
         return view('frontend.product.product_details', compact('product', 'product_color', 'product_size', 'multiImage', 'relatedProduct'));
     } // End Method
 
+    public function VendorDetails($id)
+    {
+        
+        $vendor = User::findOrFail($id);
+        $vproduct = Product::where('vendor_id',$id)->get();
+        
+        return view('frontend.vendor.vendor_details', compact('vendor','vproduct'));
 
+    }// End Method
+
+    public function VendorAll()
+    {
+        
+        $vendors = User::where('status', 'active')->where('role','vendor')->orderBy('id','DESC')->get();
+
+        return view('frontend.vendor.vendor_all', compact('vendors'));
+
+    }// End Method
 
 }

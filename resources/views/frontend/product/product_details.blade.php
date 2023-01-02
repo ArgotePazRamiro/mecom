@@ -297,32 +297,43 @@
                                 </div>
 
                                 @if ($product->vendor_id == NULL)
+
                                 <ul class="contact-infor mb-50">
-                                    <li><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-location.svg') }}" alt="" />
+                                    <li>
+                                        <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-location.svg') }}" alt="" />
                                         <strong>Dirección: </strong> 
                                         <span>Nulo</span>
                                     </li>
-                                    <li><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-contact.svg') }}" alt="" />
+                                    <li>
+                                        <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-contact.svg') }}" alt="" />
                                         <strong>Número de Contacto:</strong>
                                         <span>Adminstración</span>
                                     </li>
                                 </ul>
+
                                 @else
+
                                 <ul class="contact-infor mb-50">
-                                    <li><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-location.svg') }}" alt="" />
+                                    <li>
+                                        <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-location.svg') }}" alt="" />
                                         <strong>Dirección: </strong> 
                                         <span>{{ $product['vendor']['address'] }}</span>
                                     </li>
-                                    <li><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-contact.svg') }}" alt="" />
+                                    <li>
+                                        <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-contact.svg') }}" alt="" />
                                         <strong>Número de Contacto:</strong>
                                         <span>{{ $product['vendor']['phone'] }}</span>
                                     </li>
                                 </ul>
-                                @endif
 
+                                @endif
+                                
                                 @if ($product->vendor_id == NULL)
+
                                 <p>Para Consultar Cualquier Información Contacte con Nuestro Centro de Soporte</p>
+
                                 @else
+                                
                                 <p>{{ $product['vendor']['vendor_short_info'] }}</p>
                                 @endif
                                 
