@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use Intervention\Image\Facades\Image;
+use Carbon\Carbon;
 
 class BrandController extends Controller
 {
@@ -32,6 +33,7 @@ class BrandController extends Controller
             'brand_name' => $request->brand_name,
             'brand_slug' => strtolower(str_replace(' ', '-', $request->brand_name)),
             'brand_image' => $save_url,
+            'created_at' => Carbon::now(),
         ]);
 
         $notification = array(
@@ -71,6 +73,7 @@ class BrandController extends Controller
                 'brand_name' => $request->brand_name,
                 'brand_slug' => strtolower(str_replace(' ', '-', $request->brand_name)),
                 'brand_image' => $save_url,
+                'updated_at' => Carbon::now(),
             ]);
 
             $notification = array(
@@ -84,6 +87,7 @@ class BrandController extends Controller
 
                 'brand_name' => $request->brand_name,
                 'brand_slug' => strtolower(str_replace(' ', '-', $request->brand_name)),
+                'updated_at' => Carbon::now(),
             ]);
 
             $notification = array(

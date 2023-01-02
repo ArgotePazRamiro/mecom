@@ -146,7 +146,7 @@ class ProductController extends Controller
             
             'vendor_id' => $request->vendor_id,
             'status' => 1,
-            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
 
         ]);
 

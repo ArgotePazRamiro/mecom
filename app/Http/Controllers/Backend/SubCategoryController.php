@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Carbon\Carbon;
 
 class SubCategoryController extends Controller
 {
@@ -32,6 +33,7 @@ class SubCategoryController extends Controller
             'category_id' => $request->category_id,
             'subcategory_name' => $request->subcategory_name,
             'subcategory_slug' => strtolower(str_replace(' ', '-', $request->category_name)),
+            'created_at' => Carbon::now(),
         ]);
 
         $notification = array(
@@ -61,7 +63,8 @@ class SubCategoryController extends Controller
 
             'category_id' => $request->category_id,
             'subcategory_name' => $request->subcategory_name,
-            'subcategory_slug' => strtolower(str_replace(' ', '-', $request->category_name)),
+            'subcategory_slug' => strtolower(str_replace(' ', '-', $request->subcategory_name)),
+            'updated_at' => Carbon::now(),
         ]);
 
         $notification = array(

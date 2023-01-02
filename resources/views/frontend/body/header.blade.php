@@ -234,7 +234,9 @@
                                     @foreach ($categories as $item)
 
                                         <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />{{ $item->category_name }}</a>
+                                            <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />
+                                                {{ $item->category_name }}
+                                            </a>
                                         </li>
 
                                     @endforeach
@@ -246,7 +248,9 @@
                                     @foreach ($categories as $item)
 
                                         <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />{{ $item->category_name }}</a>
+                                            <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />
+                                                {{ $item->category_name }}
+                                            </a>
                                         </li>
 
                                     @endforeach
@@ -258,7 +262,8 @@
                                 <div class="d-flex categori-dropdown-inner">
                                     <ul>
                                         <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-1.svg') }}" alt="" />Milks and Dairies</a>
+                                            <a href="shop-grid-right.html"> 
+                                                <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-1.svg') }}" alt="" />Milks and Dairies</a>
                                         </li>
                                         <li>
                                             <a href="shop-grid-right.html"> <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-2.svg') }}" alt="" />Clothing & beauty</a>
@@ -282,7 +287,7 @@
                             <ul>
                                 
                                 <li>
-                                    <a class="active" href="index.html">Inicio</a>
+                                    <a class="active" href="{{ url('/') }}">Inicio</a>
                                     
                                 </li>
 
@@ -294,7 +299,10 @@
                                 
                                 @foreach ($categories as $category)
                                 <li>
-                                    <a href="#">{{ $category->category_name }}<i class="fi-rs-angle-down"></i></a>
+                                    <a href="{{ url('product/category/'.$category->id.'/'.$category->category_slug) }}">
+                                        {{ $category->category_name }}<i class="fi-rs-angle-down"></i>
+                                    </a>
+
                                     @php
         
                                     $subcategories = App\Models\SubCategory::where('category_id', $category->id)->orderBy('subcategory_name', 'ASC')->get();
@@ -305,7 +313,9 @@
                                         
                                         @foreach ($subcategories as $subcategory)
                                         <li>
-                                            <a href="vendors-grid.html">{{ $subcategory->subcategory_name }}</a>
+                                            <a href="{{ url('product/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">
+                                                {{ $subcategory->subcategory_name }}
+                                            </a>
                                         </li>
                                         @endforeach
                                         
@@ -422,7 +432,7 @@
                 <nav>
                     <ul class="mobile-menu font-heading">
                         <li class="menu-item-has-children">
-                            <a href="index.html">Inicio</a>
+                            <a href="{{ url('/') }}">Inicio</a>
                              
                         </li>
                         <li class="menu-item-has-children">
