@@ -105,14 +105,14 @@
                                     @if ($product->discount_price == NULL)
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @else
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->discount_price }}</span>
-                                        <span class="old-price">Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->discount_price }} Bs.</span>
+                                        <span class="old-price">{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @endif
@@ -219,14 +219,14 @@
                                     @if ($product->discount_price == NULL)
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @else
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->discount_price }}</span>
-                                        <span class="old-price">Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->discount_price }} Bs.</span>
+                                        <span class="old-price">{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @endif
@@ -336,14 +336,14 @@
                                     @if ($product->discount_price == NULL)
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @else
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->discount_price }}</span>
-                                        <span class="old-price">Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->discount_price }} Bs.</span>
+                                        <span class="old-price">{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @endif
@@ -412,14 +412,14 @@
                             @if ($item->discount_price == NULL)
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @else
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->discount_price }}</span>
-                                <span class="old-price">Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->discount_price }} Bs.</span>
+                                <span class="old-price">{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @endif
@@ -457,14 +457,14 @@
                             @if ($item->discount_price == NULL)
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @else
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->discount_price }}</span>
-                                <span class="old-price">Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->discount_price }} Bs.</span>
+                                <span class="old-price">{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @endif
@@ -502,14 +502,14 @@
                             @if ($item->discount_price == NULL)
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @else
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->discount_price }}</span>
-                                <span class="old-price">Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->discount_price }} Bs.</span>
+                                <span class="old-price">{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @endif
@@ -547,14 +547,14 @@
                             @if ($item->discount_price == NULL)
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @else
                             
                             <div class="product-price">
-                                <span>Bs. {{ $item->discount_price }}</span>
-                                <span class="old-price">Bs. {{ $item->selling_price }}</span>
+                                <span>{{ $item->discount_price }} Bs.</span>
+                                <span class="old-price">{{ $item->selling_price }} Bs.</span>
                             </div>
                             
                             @endif

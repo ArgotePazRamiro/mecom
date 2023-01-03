@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
 
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\CartController;
 
 
 
@@ -199,14 +200,24 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
 Route::get('/vendor/details/{id}', [IndexController::class, 'VendorDetails'])->name('vendor.details');
 Route::get('/vendor/all', [IndexController::class, 'VendorAll'])->name('vendor.all');
-Route::get('product/category/{id}/{slug}', [IndexController::class, 'CatWiseProduct']);
-Route::get('product/subcategory/{id}/{slug}', [IndexController::class, 'SubCatWiseProduct']);
+Route::get('/product/category/{id}/{slug}', [IndexController::class, 'CatWiseProduct']);
+Route::get('/product/subcategory/{id}/{slug}', [IndexController::class, 'SubCatWiseProduct']);
 
 //Product View Modal with Ajax
 
-Route::get('product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
+Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
 
+// Product Add to Cart Store Data
+Route::post('/cart/data/store/{id}', [CartController::class, 'AddToCart']);
 
+// Get data from mini Cart
+Route::get('/product/mini/cart', [CartController::class, 'AddMiniCart']);
+
+// Remove data from mini Cart
+Route::get('/minicart/product/remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
+
+// Product Add to Cart Store Data for Product Details Page
+Route::post('/dcart/data/store/{id}', [CartController::class, 'AddToCartDetails']);
 
 // // Route::get('/dashboard', function () {
 // //     return view('dashboard');

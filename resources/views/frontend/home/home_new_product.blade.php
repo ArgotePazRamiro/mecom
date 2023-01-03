@@ -90,14 +90,14 @@ $categories = App\Models\Category::orderBy('category_name','ASC')->limit(9)->get
                                     @if ($product->discount_price == NULL)
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @else
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->discount_price }}</span>
-                                        <span class="old-price">Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->discount_price }} Bs.</span>
+                                        <span class="old-price">{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @endif
@@ -141,7 +141,7 @@ $categories = App\Models\Category::orderBy('category_name','ASC')->limit(9)->get
                                 <div class="product-action-1">
                                     <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
                                     <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    
+
                                     <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" id="{{ $product->id }}" onclick="productView(this.id)"><i class="fi-rs-eye"></i></a>
                                 </div>
 
@@ -185,14 +185,14 @@ $categories = App\Models\Category::orderBy('category_name','ASC')->limit(9)->get
                                     @if ($product->discount_price == NULL)
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @else
 
                                     <div class="product-price">
-                                        <span>Bs. {{ $product->discount_price }}</span>
-                                        <span class="old-price">Bs. {{ $product->selling_price }}</span>
+                                        <span>{{ $product->discount_price }} Bs.</span>
+                                        <span class="old-price">{{ $product->selling_price }} Bs.</span>
                                     </div>
 
                                     @endif
