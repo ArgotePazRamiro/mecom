@@ -21,6 +21,7 @@ use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
 
 use App\Http\Controllers\User\WishlistController;
+use App\Http\Controllers\User\CompareController;
 
 
 
@@ -220,11 +221,14 @@ Route::get('/product/mini/cart', [CartController::class, 'AddMiniCart']);
 // Remove data from mini Cart
 Route::get('/minicart/product/remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
 
-// Product Add to Cart Store Data for Product Details Page
+// Product Add to Cart 
 Route::post('/dcart/data/store/{id}', [CartController::class, 'AddToCartDetails']);
 
-// Product Add to Wishlist Store Data for Product Details Page
+// Product Add to Wishlist 
 Route::post('/add-to-wishlist/{produc_id}', [WishlistController::class, 'AddToWishList']);
+
+// Product Add to Compare 
+Route::post('/add-to-compare/{produc_id}', [CompareController::class, 'AddToCompare']);
 
 
 //User All Route
@@ -236,6 +240,14 @@ Route::middleware(['auth','role:user'])->group(function() {
         Route::get('/wishlist', 'AllWishList')->name('wishlist');
         Route::get('/get-wishlist-product', 'GetWishlistProduct');
         Route::get('/wishlist-remove/{id}', 'WishlistRemove');
+
+    });
+
+    //Compare All Route
+    Route::controller(CompareController::class)->group(function () {
+        Route::get('/compare', 'AllCompare')->name('compare');
+        Route::get('/get-compare-product', 'GetCompareProduct');
+        Route::get('/compare-remove/{id}', 'CompareRemove');
 
     });
 

@@ -14,7 +14,7 @@
         <div class="col-xl-10 col-lg-12 m-auto">
             <div class="mb-50">
                 <h1 class="heading-2 mb-10">Tu Lista de Deseos</h1>
-                <h6 class="text-body">Hay <span class="text-brand">5</span> productos en esta lista.</h6>
+                <h6 class="text-body">Hay <span class="text-brand">6</span> productos en esta lista.</h6>
             </div>
             <div class="table-responsive shopping-summery">
                 <table class="table table-wishlist">
@@ -27,7 +27,7 @@
                             <th scope="col">Precio</th>
                             <th scope="col">Inventario</th>
 
-                            <th scope="col" class="end">Remove</th>
+                            <th scope="col" class="end">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody id="wishlist">
