@@ -1,22 +1,26 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
-use App\Http\Middleware\RedirectIfAuthenticated;
-
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
 
+use App\Http\Middleware\RedirectIfAuthenticated;
+
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
+
+use App\Http\Controllers\User\WishlistController;
 
 
 
@@ -218,6 +222,27 @@ Route::get('/minicart/product/remove/{rowId}', [CartController::class, 'RemoveMi
 
 // Product Add to Cart Store Data for Product Details Page
 Route::post('/dcart/data/store/{id}', [CartController::class, 'AddToCartDetails']);
+
+// Product Add to Wishlist Store Data for Product Details Page
+Route::post('/add-to-wishlist/{produc_id}', [WishlistController::class, 'AddToWishList']);
+
+
+//User All Route
+
+Route::middleware(['auth','role:user'])->group(function() {
+
+    //WishList All Route
+    Route::controller(WishlistController::class)->group(function () {
+        Route::get('/wishlist', 'AllWishList')->name('wishlist');
+        Route::get('/get-wishlist-product', 'GetWishlistProduct');
+        Route::get('/wishlist-remove/{id}', 'WishlistRemove');
+
+    });
+
+});  //End Middleware
+
+
+
 
 // // Route::get('/dashboard', function () {
 // //     return view('dashboard');
