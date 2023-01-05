@@ -107,6 +107,21 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Sistema de Cupones</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Todos los Cupones</a>
+                </li>
+                <li> <a href="{{ route('add.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Cupón</a>
+                </li>
+               
+            </ul>
+        </li>
+
         <li class="menu-label">UI Elements</li>
         
         <li>
