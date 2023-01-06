@@ -280,6 +280,28 @@ Route::post('/add-to-wishlist/{produc_id}', [WishlistController::class, 'AddToWi
 // Product Add to Compare 
 Route::post('/add-to-compare/{produc_id}', [CompareController::class, 'AddToCompare']);
 
+// Frontend Coupon Option 
+Route::post('/coupon-apply', [CartController::class, 'CouponApply']);
+
+Route::get('/coupon-calculation', [CartController::class, 'CouponCalculation']);
+
+Route::get('/coupon-remove', [CartController::class, 'CouponRemove']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //User All Route
 
