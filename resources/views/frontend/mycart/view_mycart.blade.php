@@ -4,7 +4,7 @@
 <div class="page-header breadcrumb-wrap">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+            <a href="{{ url('/') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
             <span></span> Carrito de Compras
         </div>
     </div>
@@ -96,7 +96,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <a href="#" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a>
+                        <a href="{{ route('checkout') }}" class="btn mb-20 w-100">Proceder a Pagar<i class="fi-rs-sign-out ml-15"></i></a>
                     </div>
                 </div>
 
