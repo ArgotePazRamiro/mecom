@@ -16,6 +16,8 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ShippingAreaController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\VendorOrderController;
 
 use App\Http\Middleware\RedirectIfAuthenticated;
 
@@ -101,7 +103,15 @@ Route::middleware(['auth','role:vendor'])->group(function() {
 
     });
 
-}); //End Middleware
+    //Vendor Order Route
+    Route::controller(VendorOrderController::class)->group(function () {
+        Route::get('/vendor/order', 'VendorOrder')->name('vendor.order');
+
+    });
+
+
+
+}); //End Vendor Group Middleware
 
 
 //Login Roles
@@ -247,6 +257,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/district/ajax/{division_id}', 'GetDistrict');
 
     });
+
+    //Admin Order All Route
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/pending/order', 'PendingOrder')->name('pending.order');
+        
+
+    });
+
+
 
 });//Admin Middleware End
 

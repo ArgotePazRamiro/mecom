@@ -67,7 +67,7 @@ class StripeController extends Controller
             'order_date' => Carbon::now()->format('d F Y'),
             'order_month' => Carbon::now()->format('F'),
             'order_year' => Carbon::now()->format('Y'),
-            'status' => 'pending',
+            'status' => 'pendiente',
             'created_at' => Carbon::now(),
 
         ]);
@@ -157,14 +157,14 @@ class StripeController extends Controller
 
             'payment_type' => 'Pago al Entregar',
             'payment_method' => 'Pago al Entregar',
-            'currency' => 'BOB',
+            'currency' => 'bob',
             'amount' => $total_amount,
 
             'invoice_no' => 'EBS'.mt_rand(10000000, 99999999),
             'order_date' => Carbon::now()->format('d F Y'),
             'order_month' => Carbon::now()->format('F'),
             'order_year' => Carbon::now()->format('Y'),
-            'status' => 'pending',
+            'status' => 'pendiente',
             'created_at' => Carbon::now(),
 
         ]);

@@ -25,9 +25,11 @@
                 <div class="menu-title">Marcas</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.brand') }}"><i class="bx bx-right-arrow-alt"></i>Marcas Disponibles</a>
+                <li> 
+                    <a href="{{ route('all.brand') }}"><i class="bx bx-right-arrow-alt"></i>Marcas Disponibles</a>
                 </li>
-                <li> <a href="{{ route('add.brand') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Marca</a>
+                <li> 
+                    <a href="{{ route('add.brand') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Marca</a>
                 </li>
                 
             </ul>
@@ -39,9 +41,11 @@
                 <div class="menu-title">Categoría</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.category') }}"><i class="bx bx-right-arrow-alt"></i>Categorías Disponibles</a>
+                <li> 
+                    <a href="{{ route('all.category') }}"><i class="bx bx-right-arrow-alt"></i>Categorías Disponibles</a>
                 </li>
-                <li> <a href="{{ route('add.category') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Categoría</a>
+                <li> 
+                    <a href="{{ route('add.category') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Categoría</a>
                 </li>
                
             </ul>
@@ -54,9 +58,11 @@
                 <div class="menu-title">SubCategoría</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>SubCategorías Disponibles</a>
+                <li> 
+                    <a href="{{ route('all.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>SubCategorías Disponibles</a>
                 </li>
-                <li> <a href="{{ route('add.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Añadir SubCategoría</a>
+                <li> 
+                    <a href="{{ route('add.subcategory') }}"><i class="bx bx-right-arrow-alt"></i>Añadir SubCategoría</a>
                 </li>
                
             </ul>
@@ -69,9 +75,11 @@
                 <div class="menu-title">Manejo de Productos</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.product') }}"><i class="bx bx-right-arrow-alt"></i>Productos</a>
+                <li> 
+                    <a href="{{ route('all.product') }}"><i class="bx bx-right-arrow-alt"></i>Productos</a>
                 </li>
-                <li> <a href="{{ route('add.product') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
+                <li> 
+                    <a href="{{ route('add.product') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
                 </li>
                
             </ul>
@@ -84,9 +92,11 @@
                 <div class="menu-title">Manejo de Slider</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.slider') }}"><i class="bx bx-right-arrow-alt"></i>Slider Disponibles</a>
+                <li> 
+                    <a href="{{ route('all.slider') }}"><i class="bx bx-right-arrow-alt"></i>Slider Disponibles</a>
                 </li>
-                <li> <a href="{{ route('add.slider') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Slider</a>
+                <li> 
+                    <a href="{{ route('add.slider') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Slider</a>
                 </li>
                
             </ul>
@@ -99,9 +109,11 @@
                 <div class="menu-title">Manejo de Banner</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.banner') }}"><i class="bx bx-right-arrow-alt"></i>Banner Disponibles</a>
+                <li> 
+                    <a href="{{ route('all.banner') }}"><i class="bx bx-right-arrow-alt"></i>Banner Disponibles</a>
                 </li>
-                <li> <a href="{{ route('add.banner') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Banner</a>
+                <li> 
+                    <a href="{{ route('add.banner') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Banner</a>
                 </li>
                
             </ul>
@@ -114,9 +126,11 @@
                 <div class="menu-title">Sistema de Cupones</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Todos los Cupones</a>
+                <li> 
+                    <a href="{{ route('all.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Todos los Cupones</a>
                 </li>
-                <li> <a href="{{ route('add.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Cupón</a>
+                <li> 
+                    <a href="{{ route('add.coupon') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Cupón</a>
                 </li>
                
             </ul>
@@ -129,11 +143,14 @@
                 <div class="menu-title">Área de Envíos</div>
             </a>
             <ul>
-                <li> <a href="{{ route('all.division') }}"><i class="bx bx-right-arrow-alt"></i>Comunas</a>
+                <li> 
+                    <a href="{{ route('all.division') }}"><i class="bx bx-right-arrow-alt"></i>Comunas</a>
                 </li>
-                <li> <a href="{{ route('all.district') }}"><i class="bx bx-right-arrow-alt"></i>Distritos</a>
+                <li> 
+                    <a href="{{ route('all.district') }}"><i class="bx bx-right-arrow-alt"></i>Distritos</a>
                 </li>
-                <li> <a href="{{ route('all.state') }}"><i class="bx bx-right-arrow-alt"></i>Zonas</a>
+                <li> 
+                    <a href="{{ route('all.state') }}"><i class="bx bx-right-arrow-alt"></i>Zonas</a>
                 </li>
                
             </ul>
@@ -148,13 +165,31 @@
                 <div class="menu-title">Manejo de Vendedor</div>
             </a>
             <ul>
-                <li> <a href="{{ route('inactive.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedor Inactivo</a>
+                <li> 
+                    <a href="{{ route('inactive.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedor Inactivo</a>
                 </li>
-                <li> <a href="{{ route('active.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedor Activo</a>
+                <li> 
+                    <a href="{{ route('active.vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedor Activo</a>
                 </li>
                 
             </ul>
         </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-cart'></i>
+                </div>
+                <div class="menu-title">Manejo de Órdenes</div>
+            </a>
+            <ul>
+                <li> 
+                    <a href="{{ route('pending.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Pendientes</a>
+                </li>
+                
+                
+            </ul>
+        </li>
+
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>

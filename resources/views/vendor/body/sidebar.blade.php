@@ -36,9 +36,11 @@
                 <div class="menu-title">Manejo de Productos</div>
             </a>
             <ul>
-                <li> <a href="{{ route('vendor.all.product') }}"><i class="bx bx-right-arrow-alt"></i>Productos</a>
+                <li> 
+                    <a href="{{ route('vendor.all.product') }}"><i class="bx bx-right-arrow-alt"></i>Productos</a>
                 </li>
-                <li> <a href="{{ route('vendor.add.product') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
+                <li> 
+                    <a href="{{ route('vendor.add.product') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Producto</a>
                 </li>
             </ul>
         </li>
@@ -49,9 +51,8 @@
                 <div class="menu-title">Órdenes</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
-                </li>
-                <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+                <li> 
+                    <a href="{{ route('vendor.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Pendientes</a>
                 </li>
             </ul>
         </li>
