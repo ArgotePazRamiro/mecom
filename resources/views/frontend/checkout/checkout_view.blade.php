@@ -178,8 +178,9 @@
                                     <h6 class="text-muted">Descuento de Cupón</h6>
                                 </td>
                                 <td class="cart_total_amount">
-                                    <h4 class="text-brand text-end">{{ session()->get('coupon')['discount_amount'] }}
-                                        Bs.</h4>
+                                    <h4 class="text-brand text-end">
+                                        {{ session()->get('coupon')['discount_amount'] }} Bs.
+                                    </h4>
                                 </td>
                             </tr>
 
@@ -188,7 +189,8 @@
                                     <h6 class="text-muted">Costo Total</h6>
                                 </td>
                                 <td class="cart_total_amount">
-                                    <h4 class="text-brand text-end">{{ session()->get('coupon')['total_amount'] }} Bs.
+                                    <h4 class="text-brand text-end">
+                                        {{ session()->get('coupon')['total_amount'] }} Bs.
                                     </h4>
                                 </td>
                             </tr>
@@ -277,7 +279,7 @@
                     type: "GET",
                     dataType: "json",
                     success:function(data){
-                        $('select[name="district_id"]').html('');
+                        $('select[name="state_id"]').html('');
                         var d =$('select[name="district_id"]').empty();
                         $.each(data, function(key, value){
                             $('select[name="district_id"]').append('<option value="'+ value.id +'">' + value.district_name + '</option>');

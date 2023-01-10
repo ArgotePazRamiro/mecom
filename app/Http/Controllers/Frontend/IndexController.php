@@ -113,7 +113,6 @@ class IndexController extends Controller
     {
 
         $product = Product::with('category','brand')->findOrFail($id);
-
         $color = $product->product_color;
         $product_color = explode(',', $color);
 
