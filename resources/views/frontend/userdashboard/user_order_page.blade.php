@@ -65,17 +65,17 @@
 
                                                             <span class="badge rounded-pill bg-warning">Pendiente</span>
 
-                                                            @elseif ($order->status == 'confirmar')
+                                                            @elseif ($order->status == 'confirmada')
 
-                                                            <span class="badge rounded-pill bg-info">Confirmar</span>
+                                                            <span class="badge rounded-pill bg-info">Confirmada</span>
 
-                                                            @elseif ($order->status == 'procesando')
+                                                            @elseif ($order->status == 'procesandose')
 
-                                                            <span class="badge rounded-pill bg-danger">Procesando</span>
+                                                            <span class="badge rounded-pill bg-danger">Procesándose</span>
 
-                                                            @elseif ($order->status == 'entregado')
+                                                            @elseif ($order->status == 'entregada')
 
-                                                            <span class="badge rounded-pill bg-success">Entregado</span>
+                                                            <span class="badge rounded-pill bg-success">Entregada</span>
 
                                                             @endif
 

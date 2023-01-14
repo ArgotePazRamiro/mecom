@@ -5,13 +5,13 @@
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Órdenes Pendientes</div>
+        <div class="breadcrumb-title pe-3">Órdenes Confirmadas</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Órdenes Pendientes</li>
+                    <li class="breadcrumb-item active" aria-current="page">Órdenes Confirmadas</li>
                 </ol>
             </nav>
         </div>
@@ -51,6 +51,7 @@
                             <td><span class="badge rounded-pill bg-success">{{ $item->status }}</span></td>
                             <td>
                                 <a href="{{ route('admin.order.details', $item->id) }}" class="btn btn-info" title="Detalles"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.invoice.download', $item->id) }}" class="btn btn-danger" title="PDF Factura"><i class="fa fa-download"></i></a>
                             </td>
                         </tr>
                         @endforeach

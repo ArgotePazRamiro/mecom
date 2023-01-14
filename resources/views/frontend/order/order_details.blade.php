@@ -323,8 +323,28 @@
 
         </div>
 
+        {{-- Start RETURN ORDER OPCION --}}
+
+        @if ($order->status !== 'entregado')
+            
+        @else
+            
+        <div class="form-group" style="font-weight:600;font-size:initial;color:#000000">
+            <label>Retornar Órden</label><br>
+            <textarea name="return_reason" class="form-control">
+
+            </textarea>
+        </div>
+        <button type="submit" class="btn-sm btn-danger">Retornar</button>
+
+        @endif
+
+        {{-- End RETURN ORDER OPCION --}}
+
     </div>
 
 </div>
+
+
 
 @endsection

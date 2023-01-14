@@ -185,6 +185,15 @@
                 <li> 
                     <a href="{{ route('pending.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Pendientes</a>
                 </li>
+                <li> 
+                    <a href="{{ route('admin.confirmed.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Confirmadas</a>
+                </li>
+                <li> 
+                    <a href="{{ route('admin.processing.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Procesándose</a>
+                </li>
+                <li> 
+                    <a href="{{ route('admin.delivered.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Entregadas</a>
+                </li>
                 
                 
             </ul>
