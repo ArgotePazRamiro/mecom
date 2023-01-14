@@ -14,7 +14,7 @@
 <div class="page-content pt-50 pb-50">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 m-auto">   
+            <div class="col-lg-12 m-auto">
                 <div class="row">
 
                     {{-- START COL MD 3 Menu --}}
@@ -28,7 +28,7 @@
                     <div class="col-md-9">
 
                         {{-- START ROW Menu --}}
-                        
+
                         <div class="row">
 
                             <div class="col-md-6">
@@ -147,7 +147,8 @@
 
                                                 <tr>
                                                     <th>Estado de la Orden:</th>
-                                                    <th><span class="badge rounded-pill bg-warning">{{ $order->status }}</span></th>
+                                                    <th><span class="badge rounded-pill bg-warning">{{ $order->status
+                                                            }}</span></th>
                                                 </tr>
 
                                             </table>
@@ -187,52 +188,52 @@
                 <table class="table" style="font-weight: 600;">
 
                     <tbody>
-                            
-                        
+
+
 
                         <tr>
 
                             <td class="col-md-1">
 
                                 <label>Imagen</label>
-                                
+
                             </td>
                             <td class="col-md-2">
 
                                 <label>Nombre de Producto</label>
-                              
+
                             </td>
                             <td class="col-md-2">
 
                                 <label>Nombre de Vendedor</label>
-                                
+
                             </td>
                             <td class="col-md-2">
 
                                 <label>Código de Producto</label>
-                                
+
                             </td>
                             <td class="col-md-1">
 
                                 <label>Color</label>
-                                
+
                             </td>
                             <td class="col-md-1">
 
                                 <label>Tamaño</label>
-                                
+
                             </td>
                             <td class="col-md-1">
 
                                 <label>Cantidad</label>
-                                
+
                             </td>
                             <td class="col-md-3">
 
                                 <label>Precio</label>
-                                
+
                             </td>
-                            
+
                         </tr>
 
                         @foreach ($orderItem as $item)
@@ -244,45 +245,45 @@
                                 <label>
                                     <img src="{{ asset($item->product->product_thambnail) }}">
                                 </label>
-                                
+
                             </td>
                             <td class="col-md-2">
 
                                 <label>{{ $item->product->product_name }}</label>
-                                
+
                             </td>
 
                             @if ($item->vendor_id == NULL)
                             <td class="col-md-2">
 
                                 <label>Administración</label>
-                                
+
                             </td>
                             @else
                             <td class="col-md-2">
 
                                 <label>{{ $item->product->vendor->name }}</label>
-                                
+
                             </td>
                             @endif
-                            
+
                             <td class="col-md-2">
 
                                 <label>{{ $item->product->product_code }}</label>
-                                
+
                             </td>
 
                             @if ($item->color == NULL)
                             <td class="col-md-1">
 
                                 <label>...</label>
-                                
+
                             </td>
                             @else
                             <td class="col-md-1">
 
                                 <label>{{ $item->color }}</label>
-                                
+
                             </td>
                             @endif
 
@@ -290,25 +291,25 @@
                             <td class="col-md-1">
 
                                 <label>...</label>
-                                
+
                             </td>
                             @else
                             <td class="col-md-1">
 
                                 <label>{{ $item->size }}</label>
-                                
+
                             </td>
                             @endif
 
                             <td class="col-md-1">
 
                                 <label>{{ $item->qty }}</label>
-                                
+
                             </td>
                             <td class="col-md-3">
 
                                 <label>{{ $item->price }} Bs.<br> Total = {{ $item->price * $item->qty }} Bs.</label>
-                                
+
                             </td>
 
                         </tr>
@@ -325,17 +326,36 @@
 
         {{-- Start RETURN ORDER OPCION --}}
 
-        @if ($order->status !== 'entregado')
-            
-        @else
-            
-        <div class="form-group" style="font-weight:600;font-size:initial;color:#000000">
-            <label>Retornar Órden</label><br>
-            <textarea name="return_reason" class="form-control">
+        @if ($order->status !== 'entregada')
 
-            </textarea>
-        </div>
-        <button type="submit" class="btn-sm btn-danger">Retornar</button>
+        @else
+        
+        @php
+            $order = App\Models\Order::where('id', $order->id)->where('return_reason', '=', NULL)->first();
+        @endphp
+
+            @if ($order)
+                <form action="{{ route('return.order', $order->id) }}" method="POST">
+
+                    @csrf
+
+                    <div class="form-group" style="font-weight:600;font-size:initial;color:#000000">
+                        <label>Motivo de Devolución del Pedido</label><br>
+                        <textarea name="return_reason" class="form-control" style="width:40%;">
+
+                        </textarea>
+                    </div>
+                    <button type="submit" class="btn-sm btn-danger" style="width:40%;">Retornar</button>
+
+                </form>
+            
+            @else
+
+                <h5>
+                    <span class="" style="color:red;">Usted ya envio una solicitud de retorno para esta Orden</span>
+                </h5><br><br>
+
+            @endif
 
         @endif
 

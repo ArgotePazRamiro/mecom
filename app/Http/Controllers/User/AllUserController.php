@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 class AllUserController extends Controller
 {
@@ -68,6 +69,35 @@ class AllUserController extends Controller
                             ]);
 
         return $pdf->download('Factura.pdf');
+
+    }// End Method
+
+    public function ReturnOrder(Request $request, $order_id)
+    {
+        
+        Order::findOrFail($order_id)->update([
+
+            'return_date' => Carbon::now()->format('d F Y'),
+            'return_reason' => $request->return_reason,
+            'return_order' => 1,
+
+        ]);
+
+        $notification = array(
+            'message' => 'Solicitud de Devolución Enviada con Éxito',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('user.order.page')->with($notification);
+
+    }// End Method
+
+    public function ReturnOrderPage()
+    {
+        
+        $orders = Order::where('user_id', Auth::id())->where('return_reason', '!=', NULL)->orderBy('id', 'DESC')->get();
+
+        return view('frontend.order.return_order_view', compact('orders'));
 
     }// End Method
 

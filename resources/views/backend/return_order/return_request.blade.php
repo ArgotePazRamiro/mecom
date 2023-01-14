@@ -5,13 +5,13 @@
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Órdenes Entregadas</div>
+        <div class="breadcrumb-title pe-3">Solicitud de Retorno</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Órdenes Entregadas</li>
+                    <li class="breadcrumb-item active" aria-current="page">Solicitud de Retorno</li>
                 </ol>
             </nav>
         </div>
@@ -36,6 +36,7 @@
                             <th>Monto</th>
                             <th>Método de Pago</th>
                             <th>Estado</th> 
+                            <th>Razón de Retorno</th> 
                             <th>Acción</th>
                         </tr>
                     </thead>
@@ -48,13 +49,20 @@
                             <td>{{ $item->invoice_no }}</td>
                             <td>{{ $item->amount }} Bs.</td>
                             <td>{{ $item->payment_method }}</td>
-                            <td><span class="badge rounded-pill bg-success">{{ $item->status }}</span></td>
+                            <td>
+                                @if ($item->return_order == 1)
+                                    <span class="badge rounded-pill bg-danger">Pendiente</span>
+                                @elseif ($item->return_order == 2)
+                                    <span class="badge rounded-pill bg-success">Exitosa</span>
+                                @endif
+                            </td>
+                            <td>{{ $item->return_reason }}</td>
                             <td>
                                 <a href="{{ route('admin.order.details', $item->id) }}" class="btn btn-info" title="Detalles">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a href="{{ route('admin.invoice.download', $item->id) }}" class="btn btn-danger" title="PDF Factura">
-                                    <i class="fa fa-download"></i>
+                                <a href="{{ route('return.request.approved', $item->id) }}" class="btn btn-danger" title="Aprobar" id="approved">
+                                    <i class="fa-solid fa-person-circle-check"></i>
                                 </a>
                             </td>
                         </tr>
@@ -69,6 +77,7 @@
                             <th>Monto</th>
                             <th>Método de Pago</th>
                             <th>Estado</th> 
+                            <th>Razón de Retorno</th> 
                             <th>Acción</th>
                         </tr>
                     </tfoot>

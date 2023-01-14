@@ -20,6 +20,11 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ ($route == 'return.order.page') ? 'active' : '' }}" href="{{ route('return.order.page') }}"><i class="fi-rs-shopping-bag mr-10"></i>
+                    Ordenes Retornadas
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#track-orders"><i class="fi-rs-shopping-cart-check mr-10"></i>
                     Sigue tu Orden
                 </a>

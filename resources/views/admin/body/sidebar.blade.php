@@ -193,9 +193,23 @@
                 </li>
                 <li> 
                     <a href="{{ route('admin.delivered.order') }}"><i class="bx bx-right-arrow-alt"></i>Órdenes Entregadas</a>
+                </li> 
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-cart'></i>
+                </div>
+                <div class="menu-title">Órdenes Retornadas</div>
+            </a>
+            <ul>
+                <li> 
+                    <a href="{{ route('return.request') }}"><i class="bx bx-right-arrow-alt"></i>Solicitudes de Retorno</a>
                 </li>
-                
-                
+                <li> 
+                    <a href="{{ route('complete.return.request') }}"><i class="bx bx-right-arrow-alt"></i>Solicitud Completa</a>
+                </li>
             </ul>
         </li>
 

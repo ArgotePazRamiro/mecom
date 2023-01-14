@@ -11,7 +11,7 @@
     <div class="container">
         <div class="breadcrumb">
             <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
-            <span></span> Mi Cuenta
+            <span></span> Página de Órdenes Retornadas
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="mb-0">Tus Ordenes</h3>
+                                        <h3 class="mb-0">Tus Ordenes Retornadas</h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="table-responsive">
@@ -47,6 +47,7 @@
                                                         <th>Monto Total</th>
                                                         <th>Método de Pago</th>
                                                         <th>Factura</th>
+                                                        <th>Razón de Retorno</th>
                                                         <th>Estado</th>
                                                         <th>Acciones</th>
                                                     </tr>
@@ -61,28 +62,20 @@
                                                         <td>{{ $order->amount }} Bs.</td>
                                                         <td>{{ $order->payment_method }}</td>
                                                         <td>{{ $order->invoice_no }}</td>
+                                                        <td>{{ $order->return_reason }}</td>
                                                         <td>
 
-                                                            @if ($order->status == 'pendiente')
+                                                            @if ($order->return_order == 0)
 
-                                                            <span class="badge rounded-pill bg-warning">Pendiente</span>
+                                                            <span class="badge rounded-pill bg-warning">Sin Solicitud</span>
 
-                                                            @elseif ($order->status == 'confirmada')
+                                                            @elseif ($order->return_order == 1)
 
-                                                            <span class="badge rounded-pill bg-info">Confirmada</span>
+                                                            <span class="badge rounded-pill bg-danger">Pendiente</span>
 
-                                                            @elseif ($order->status == 'procesandose')
+                                                            @elseif ($order->return_order == 2)
 
-                                                            <span
-                                                                class="badge rounded-pill bg-dark">Procesándose</span>
-
-                                                            @elseif ($order->status == 'entregada')
-
-                                                            <span class="badge rounded-pill bg-success">Entregada</span>
-
-                                                            @if ($order->return_order == 1)
-                                                            <span class="badge rounded-pill" style="background:red;">Retornada</span>
-                                                            @endif
+                                                            <span class="badge rounded-pill bg-success">Exitosa</span>
 
                                                             @endif
 

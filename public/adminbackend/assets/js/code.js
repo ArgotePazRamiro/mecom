@@ -126,3 +126,36 @@ $(function(){
 
   });
   //END DELIVERED ORDER
+
+//RETURN APPROVED ORDER
+
+  $(function(){
+    $(document).on('click','#approved',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+
+  
+                  Swal.fire({
+                    title: '¿ Esta Seguro de aprobar el retorno del Pedido ?',
+                    text: "Una vez Aprobada, ya no podrá cambiar el Estado",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, apruébala!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.href = link
+                      Swal.fire(
+                        'Aprobada!',
+                        'Orden Aprobada Correctamente.',
+                        'success'
+                      )
+                    }
+                  }) 
+
+
+    });
+
+  });
+  //END RETURN APPROVED ORDER
