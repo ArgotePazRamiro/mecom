@@ -79,6 +79,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
 //Vendor Dashboard
 
 Route::middleware(['auth','role:vendor'])->group(function() {
+
     Route::get('/vendor/dashboard', [VendorController::class, 'VendorDashboard'])->name('vendor.dashboard');
     Route::get('/vendor/logout', [VendorController::class, 'VendorDestroy'])->name('vendor.logout');
     Route::get('/vendor/profile', [VendorController::class, 'VendorProfile'])->name('vendor.profile');
@@ -105,9 +106,12 @@ Route::middleware(['auth','role:vendor'])->group(function() {
 
     });
 
-    //Vendor Order Route
+    //Vendor Order All Route
     Route::controller(VendorOrderController::class)->group(function () {
         Route::get('/vendor/order', 'VendorOrder')->name('vendor.order');
+        Route::get('/vendor/return/order', 'VendorReturnOrder')->name('vendor.return.order');
+        Route::get('/vendor/complete/return/order', 'VendorCompleteReturnOrder')->name('vendor.complete.return.order');
+        Route::get('/vendor/order/details/{order_id}', 'VendorOrderDetails')->name('vendor.order.details');
 
     });
 

@@ -5,13 +5,13 @@
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Órdenes Pendientes</div>
+        <div class="breadcrumb-title pe-3">Órdenes Regresadas</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Órdenes Pendientes</li>
+                    <li class="breadcrumb-item active" aria-current="page">Órdenes Regresadas</li>
                 </ol>
             </nav>
         </div>
@@ -35,6 +35,7 @@
                             <th>Factura</th>
                             <th>Monto</th>
                             <th>Método de Pago</th>
+                            <th>Motivo</th>
                             <th>Estado</th> 
                             <th>Acción</th>
                         </tr>
@@ -42,17 +43,30 @@
                     <tbody>
 
                         @foreach ( $orderItem as $key => $item )
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $item['order']['order_date'] }}</td>
-                            <td>{{ $item['order']['invoice_no'] }}</td>
-                            <td>{{ $item['order']['amount'] }} Bs.</td>
-                            <td>{{ $item['order']['payment_method'] }}</td>
-                            <td><span class="badge rounded-pill bg-success">{{ $item['order']['status'] }}</span></td>
-                            <td>
-                                <a href="{{ route('vendor.order.details', $item->order->id) }}" class="btn btn-info" title="Details"><i class="fa fa-eye"></i></a>
-                            </td>
-                        </tr>
+                        @if ($item->order->return_order == 1)
+                            <tr>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $item['order']['order_date'] }}</td>
+                                <td>{{ $item['order']['invoice_no'] }}</td>
+                                <td>{{ $item['order']['amount'] }} Bs.</td>
+                                <td>{{ $item['order']['payment_method'] }}</td>
+                                <td>{{ $item['order']['return_reason'] }}</td>
+                                <td>
+
+                                    @if ($item->order->return_order == 1)
+                                        <span class="badge rounded-pill bg-danger">Retorno</span>
+                                    @else
+                                        <span class="badge rounded-pill bg-success">Hecho</span>   
+                                    @endif
+                                    
+                                </td>
+                                <td>
+                                    <a href="{{ route('vendor.order.details', $item->order->id) }}" class="btn btn-info" title="Details"><i class="fa fa-eye"></i></a>
+                                </td>
+                            </tr>
+                        @else
+
+                        @endif   
                         @endforeach
                         
                     </tbody>
@@ -63,6 +77,7 @@
                             <th>Factura</th>
                             <th>Monto</th>
                             <th>Método de Pago</th>
+                            <th>Motivo</th>
                             <th>Estado</th> 
                             <th>Acción</th>
                         </tr>

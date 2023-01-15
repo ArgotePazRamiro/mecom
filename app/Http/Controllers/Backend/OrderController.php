@@ -67,7 +67,7 @@ class OrderController extends Controller
         
         Order::findOrFail($order_id)->update([
 
-            'status' => 'confirmar',
+            'status' => 'confirmada',
             'confirmed_date' => Carbon::now()->format('d F Y'),
 
         ]);

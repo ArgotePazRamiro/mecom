@@ -150,7 +150,7 @@
                 <td style="text-align:center">{{ $item->product->vendor->name }}</td>
                 @endif
 
-                <td style="text-align:center">{{ $item->price }} Bs.</td>
+                <td style="text-align:center">{{ $item->price * $item->qty }} Bs.</td>
             </tr>
 
             @endforeach
@@ -162,10 +162,10 @@
     <table width="100%" style=" padding:0 10px 0 10px;">
         <tr>
             <td style="text-align:right">
-                
+
                 <h2><span style="color: green;">Subtotal:</span> {{ $order->amount }} Bs.</h2>
                 <h2><span style="color: green;">Total:</span> {{ $order->amount }} Bs.</h2>
-                {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
+
             </td>
         </tr>
     </table>

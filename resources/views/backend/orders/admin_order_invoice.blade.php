@@ -150,7 +150,7 @@
                 <td style="text-align:center">{{ $item->product->vendor->name }}</td>
                 @endif
 
-                <td style="text-align:center">{{ $item->price }} Bs.</td>
+                <td style="text-align:center">{{ $item->price * $item->qty }} Bs.</td>
             </tr>
 
             @endforeach
