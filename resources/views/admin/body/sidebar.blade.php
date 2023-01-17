@@ -249,6 +249,24 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manejo de Blog</div>
+            </a>
+            <ul>
+
+                <li> 
+                    <a href="{{ route('admin.blog.category') }}"><i class="bx bx-right-arrow-alt"></i>Categorías de Blog</a>
+                </li>
+                <li> 
+                    <a href="{{ route('all-vendor') }}"><i class="bx bx-right-arrow-alt"></i>Blog Posteados</a>
+                </li>
+               
+            </ul>
+        </li>
+
         
         
         <li>
