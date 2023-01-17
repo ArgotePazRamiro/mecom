@@ -222,10 +222,28 @@
             <ul>
 
                 <li> 
-                    <a href="{{ route('report.view') }}"><i class="bx bx-right-arrow-alt"></i>Vista de Reportes</a>
+                    <a href="{{ route('report.view') }}"><i class="bx bx-right-arrow-alt"></i>Búsqueda de Reportes</a>
                 </li>
                 <li> 
-                    <a href="{{ route('order.by.user') }}"><i class="bx bx-right-arrow-alt"></i>Reportes por Usuario</a>
+                    <a href="{{ route('order.by.user') }}"><i class="bx bx-right-arrow-alt"></i>Búsqueda por Usuario</a>
+                </li>
+               
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manejo de Usuarios</div>
+            </a>
+            <ul>
+
+                <li> 
+                    <a href="{{ route('all-user') }}"><i class="bx bx-right-arrow-alt"></i>Usuarios</a>
+                </li>
+                <li> 
+                    <a href="{{ route('all-vendor') }}"><i class="bx bx-right-arrow-alt"></i>Vendedores</a>
                 </li>
                
             </ul>
