@@ -17,14 +17,14 @@
                 </ol>
             </nav>
         </div>
-        
+
     </div>
     <!--end breadcrumb-->
 
     <div class="card">
         <div class="card-body p-4">
             <h5 class="card-title">Añadir Nuevo Producto</h5>
-            <hr/>
+            <hr />
 
             <form id="myForm" method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                 @csrf
@@ -33,39 +33,48 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="border border-3 p-4 rounded">
-                        
+
                                 <div class="form-group mb-3">
                                     <label for="inputProductTitle" class="form-label">Nombre de Producto</label>
-                                    <input type="text" name="product_name" class="form-control" id="inputProductTitle" placeholder="Ingrese Nombre del Producto">
+                                    <input type="text" name="product_name" class="form-control" id="inputProductTitle"
+                                        placeholder="Ingrese Nombre del Producto">
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputProductTitle" class="form-label">Etiquetas de Producto</label>
-                                    <input type="text" name="product_tags" class="form-control visually-hidden" data-role="tagsinput" value="producto Nuevo,producto Top">
+                                    <input type="text" name="product_tags" class="form-control visually-hidden"
+                                        data-role="tagsinput" value="producto Nuevo,producto Top">
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputProductTitle" class="form-label">Tamaño de Producto</label>
-                                    <input type="text" name="product_size" class="form-control visually-hidden" data-role="tagsinput" value="Pequeño,Medio,Grande">
+                                    <input type="text" name="product_size" class="form-control visually-hidden"
+                                        data-role="tagsinput" value="Pequeño,Medio,Grande">
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputProductTitle" class="form-label">Color de Producto</label>
-                                    <input type="text" name="product_color" class="form-control visually-hidden" data-role="tagsinput" value="Negro,Blanco,Metálico">
+                                    <input type="text" name="product_color" class="form-control visually-hidden"
+                                        data-role="tagsinput" value="Negro,Blanco,Metálico">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="inputProductDescription" class="form-label">Descripción Corta</label>
-                                    <textarea name="short_descp" class="form-control" id="inputProductDescription" rows="3"></textarea>
+                                    <textarea name="short_descp" class="form-control" id="inputProductDescription"
+                                        rows="3"></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputProductDescription" class="form-label">Descripción Larga</label>
-                                    <textarea id="mytextarea" name="long_descp">Introduzca los detalles deseados.</textarea>
+                                    <textarea id="mytextarea"
+                                        name="long_descp">Introduzca los detalles deseados.</textarea>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="inputProductTitle" class="form-label">Miniatura Principal</label>
-                                    <input name="product_thambnail" class="form-control" type="file" id="formFile" onChange="mainThamUrl(this)">
+                                    <input name="product_thambnail" class="form-control" type="file" id="formFile"
+                                        onChange="mainThamUrl(this)">
                                     <img src="" id="mainThmb">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="inputProductDescription" class="form-label">Imagenes del Producto</label>
-                                    <input class="form-control" name="multi_img[]" type="file" id="multiImg" multiple="">
+                                    <label for="inputProductDescription" class="form-label">Imagenes del
+                                        Producto</label>
+                                    <input class="form-control" name="multi_img[]" type="file" id="multiImg"
+                                        multiple="">
                                     <div class="row" id="preview_img">
 
                                     </div>
@@ -79,19 +88,23 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="inputPrice" class="form-label">Precio de Producto</label>
-                                        <input type="text" name="selling_price" class="form-control" id="inputPrice" placeholder="00.00">
+                                        <input type="text" name="selling_price" class="form-control" id="inputPrice"
+                                            placeholder="00.00">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="inputCompareatprice" class="form-label">Precio de Descuento</label>
-                                        <input type="text" name="discount_price" class="form-control" id="inputCompareatprice" placeholder="00.00">
+                                        <input type="text" name="discount_price" class="form-control"
+                                            id="inputCompareatprice" placeholder="00.00">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputCostPerPrice" class="form-label">Código de Producto</label>
-                                        <input type="text" name="product_code" class="form-control" id="inputCostPerPrice" placeholder="0000ASDF">
+                                        <input type="text" name="product_code" class="form-control"
+                                            id="inputCostPerPrice" placeholder="0000ASDF">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputStarPoints" class="form-label">Cantidad de Producto</label>
-                                        <input type="text" name="product_qty" class="form-control" id="inputStarPoints" placeholder="0000">
+                                        <input type="text" name="product_qty" class="form-control" id="inputStarPoints"
+                                            placeholder="0000">
                                     </div>
 
                                     <div class="form-group col-12">
@@ -99,7 +112,7 @@
                                         <select name="brand_id" class="form-select" id="inputProductType">
                                             <option></option>
                                             @foreach ($brands as $brand)
-                                                                        
+
                                             <option value="{{ $brand->id }}">{{ $brand->brand_name }}</option>
 
                                             @endforeach
@@ -111,7 +124,7 @@
                                         <select name="category_id" class="form-select" id="inputVendor">
                                             <option></option>
                                             @foreach ($categories as $cat)
-                                                                        
+
                                             <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
 
                                             @endforeach
@@ -122,7 +135,7 @@
                                         <label for="inputCollection" class="form-label">SubCategoría de Producto</label>
                                         <select name="subcategory_id" class="form-select" id="inputCollection">
                                             <option></option>
-                                            
+
                                         </select>
                                     </div>
 
@@ -131,59 +144,69 @@
                                         <select name="vendor_id" class="form-select" id="inputCollection">
                                             <option></option>
                                             @foreach ($activeVendor as $vendor)
-                                                                        
+
                                             <option value="{{ $vendor->id }}">{{ $vendor->name }}</option>
 
                                             @endforeach
                                         </select>
                                     </div>
-    
+
                                     <div class="col-12">
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" name="hot_deals" type="checkbox" value="1" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">Ofertas Calientes</label>
+                                                    <input class="form-check-input" name="hot_deals" type="checkbox"
+                                                        value="1" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">Ofertas
+                                                        Calientes</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" name="featured" type="checkbox" value="1" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">Destacado</label>
+                                                    <input class="form-check-input" name="featured" type="checkbox"
+                                                        value="1" id="flexCheckDefault">
+                                                    <label class="form-check-label"
+                                                        for="flexCheckDefault">Destacado</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" name="special_offer" type="checkbox" value="1" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">Oferta Especial</label>
+                                                    <input class="form-check-input" name="special_offer" type="checkbox"
+                                                        value="1" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">Oferta
+                                                        Especial</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" name="special_deals" type="checkbox" value="1" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">Trato Especial</label>
+                                                    <input class="form-check-input" name="special_deals" type="checkbox"
+                                                        value="1" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">Trato
+                                                        Especial</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>{{-- // end row --}}
-                                    
+
                                     <hr>
 
                                     <div class="col-12">
                                         <div class="d-grid">
-                                            <input type="submit" class="btn btn-primary px-4" value="Guardar Producto" />
+                                            <input type="submit" class="btn btn-primary px-4"
+                                                value="Guardar Producto" />
                                         </div>
                                     </div>
 
-                                </div> 
+                                </div>
                             </div>
                         </div>
-                    </div><!--end row-->
+                    </div>
+                    <!--end row-->
                 </div>
-            
+
         </div>
-            </form>
-        
+        </form>
+
     </div>
 
 </div>
@@ -263,7 +286,6 @@
 </script>
 
 <script type="text/javascript">
-
     function mainThamUrl(input){
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -276,8 +298,7 @@
 
 </script>
 
-<script type="text/javascript"> 
- 
+<script type="text/javascript">
     $(document).ready(function(){
      $('#multiImg').on('change', function(){ //on file input change
         if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
@@ -307,7 +328,6 @@
 </script>
 
 <script type="text/javascript">
-
     $(document).ready(function(){
         $('select[name="category_id"]').on('change', function(){
             var category_id = $(this).val();

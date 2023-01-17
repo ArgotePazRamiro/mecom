@@ -98,6 +98,7 @@ class CategoryController extends Controller
 
             return redirect()->route('all.category')->with($notification);
         }
+        
     }//End method
 
     public function DeleteCategory($id)

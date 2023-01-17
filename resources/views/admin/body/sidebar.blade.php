@@ -261,7 +261,7 @@
                     <a href="{{ route('admin.blog.category') }}"><i class="bx bx-right-arrow-alt"></i>Categorías de Blog</a>
                 </li>
                 <li> 
-                    <a href="{{ route('all-vendor') }}"><i class="bx bx-right-arrow-alt"></i>Blog Posteados</a>
+                    <a href="{{ route('admin.blog.post') }}"><i class="bx bx-right-arrow-alt"></i>Blog Posteados</a>
                 </li>
                
             </ul>
