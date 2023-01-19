@@ -390,6 +390,15 @@ Route::controller(CartController::class)->group(function () {
     
 });
 
+//Frontend Blog Post All Route
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/blog', 'AllBlog')->name('home.blog');
+    Route::get('/post/details/{id}/{slug}', 'BlogDetails');
+    Route::get('/post/category/{id}/{slug}', 'BlogPostCategory');
+    
+    
+});
+
 
 
 
@@ -441,10 +450,6 @@ Route::middleware(['auth','role:user'])->group(function() {
         Route::get('/return/order/page', 'ReturnOrderPage')->name('return.order.page');
 
     });
-
-    
-
-
 
 });  //End Group User Middleware
 
