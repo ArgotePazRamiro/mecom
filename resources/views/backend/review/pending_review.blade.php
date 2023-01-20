@@ -31,12 +31,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Comentario</th>
-                            <th>Usuario</th>
+                            <th>Imagen</th>
                             <th>Producto</th>
+                            <th>Usuario</th>
+                            <th>Comentario</th>
                             <th>Calificación</th>
                             <th>Estado</th>
-                            <th>Acción</th>
+                            <th>Acción</th>            
                         </tr>
                     </thead>
                     <tbody>
@@ -44,9 +45,10 @@
                         @foreach ( $review as $key => $item )
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td>{{ Str::limit($item->comment, 25); }}</td>
-                            <td>{{ $item['user']['name'] }}</td>
+                            <td><img src="{{ asset($item['product']['product_thambnail']) }}" style="width:40px;height:40px;"></td>
                             <td>{{ $item['product']['product_name'] }}</td>
+                            <td>{{ $item['user']['name'] }}</td>
+                            <td>{{ Str::limit($item->comment, 25); }}</td>
                             <td>
                                 @if ($item->rating == NULL)
 
@@ -126,12 +128,13 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Comentario</th>
-                            <th>Usuario</th>
+                            <th>Imagen</th>
                             <th>Producto</th>
+                            <th>Usuario</th>
+                            <th>Comentario</th>
                             <th>Calificación</th>
                             <th>Estado</th>
-                            <th>Acción</th>
+                            <th>Acción</th>     
                         </tr>
                     </tfoot>
                 </table>

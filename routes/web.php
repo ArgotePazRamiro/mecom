@@ -119,6 +119,15 @@ Route::middleware(['auth','role:vendor'])->group(function() {
 
     });
 
+    //Vendor Review All Route
+    Route::controller(ReviewController::class)->group(function () {
+        Route::get('/vendor/all/review', 'VendorAllReview')->name('vendor.all.review');
+        
+    
+    });
+
+
+
 
 
 }); //End Vendor Group Middleware

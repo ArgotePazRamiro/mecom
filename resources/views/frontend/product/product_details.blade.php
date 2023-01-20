@@ -59,14 +59,15 @@
                             <h2 class="title-detail" id="dpname">{{ $product->product_name }}</h2>
                             <div class="product-detail-rating">
                                 <div class="product-rate-cover text-end">
-                                    <div class="product-rate d-inline-block">
+                                    @php
 
-                                        @php
+                                    $reviewcount = App\Models\Review::where('product_id', $product->id)->where('status', 1)->latest()->get();
 
-                                            $reviewcount = App\Models\Review::where('product_id', $product->id)->where('status', 1)->latest()->get();
+                                    $average = App\Models\Review::where('product_id', $product->id)->where('status', 1)->avg('rating');
+                                            
+                                    @endphp
 
-                                            $average = App\Models\Review::where('product_id', $product->id)->where('status', 1)->avg('rating');
-                                        @endphp
+                                    <div class="product-rate d-inline-block">                        
 
                                         @if ($average == 0)
                                         
@@ -81,9 +82,7 @@
                                         @elseif ($average == 5)
                                         <div class="product-rating" style="width: 100%"></div>
                                         @endif
-                                        
-
-
+ 
                                     </div>
                                     <span class="font-small ml-5 text-muted">({{ count($reviewcount) }} reseñas)</span>
                                 </div>

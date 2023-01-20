@@ -63,6 +63,21 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manejo de Reseñas</div>
+            </a>
+            <ul>
+
+                <li> 
+                    <a href="{{ route('vendor.all.review') }}"><i class="bx bx-right-arrow-alt"></i>Reseñas</a>
+                </li>
+
+            </ul>
+        </li>
+
         @else
 
         @endif

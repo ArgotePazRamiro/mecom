@@ -1,17 +1,17 @@
-@extends('admin.admin_dashboard')
-@section('admin')
+@extends('vendor.vendor_dashboard')
+@section('vendor')
 
 <div class="page-content">
 
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Reseñas Publicadas</div>
+        <div class="breadcrumb-title pe-3">Reseñas Aprobadas</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Reseñas Publicadas</li>
+                    <li class="breadcrumb-item active" aria-current="page">Reseñas Aprobadas</li>
                 </ol>
             </nav>
         </div>
@@ -37,7 +37,6 @@
                             <th>Comentario</th>
                             <th>Calificación</th>
                             <th>Estado</th>
-                            <th>Acción</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +48,7 @@
                             <td>{{ $item['product']['product_name'] }}</td>
                             <td>{{ $item['user']['name'] }}</td>
                             <td>{{ Str::limit($item->comment, 25); }}</td>
+                                
                             <td>
                                 @if ($item->rating == NULL)
 
@@ -105,20 +105,16 @@
 
                             <td>
 
-                                @if ($item->status == 1)
+                                @if ($item->status == 0)
 
-                                <span class="badge rounded-pill bg-success">Publicado</span>
-
-                                @elseif ($item->status == 0)
-                                
                                 <span class="badge rounded-pill bg-warning">Pendiente</span>
+
+                                @elseif ($item->status == 1)
+                                
+                                <span class="badge rounded-pill bg-success">Publicado</span>
 
                                 @endif
 
-                            </td>
-
-                            <td>
-                                <a href="{{ route('review.delete',$item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
                             </td>
 
                         </tr>
@@ -134,7 +130,6 @@
                             <th>Comentario</th>
                             <th>Calificación</th>
                             <th>Estado</th>
-                            <th>Acción</th> 
                         </tr>
                     </tfoot>
                 </table>

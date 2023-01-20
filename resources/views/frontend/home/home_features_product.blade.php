@@ -72,8 +72,31 @@
                                             <a href="shop-grid-right.html">{{ $product['category']['category_name'] }}</a>
                                         </div>
                                         <h2><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug) }}">{{ $product->product_name }}</a></h2>
+                                        
+                                        @php
+
+                                            $reviewcount = App\Models\Review::where('product_id', $product->id)->where('status', 1)->latest()->get();
+
+                                            $average = App\Models\Review::where('product_id', $product->id)->where('status', 1)->avg('rating');
+                                            
+                                        @endphp
+
                                         <div class="product-rate d-inline-block">
+
+                                            @if ($average == 0)
+
+                                            @elseif ($average == 1 || $average < 2)
+                                            <div class="product-rating" style="width: 20%"></div>
+                                            @elseif ($average == 2 || $average < 3)
+                                            <div class="product-rating" style="width: 40%"></div>
+                                            @elseif ($average == 3 || $average < 4)
+                                            <div class="product-rating" style="width: 60%"></div>
+                                            @elseif ($average == 4 || $average < 5)
                                             <div class="product-rating" style="width: 80%"></div>
+                                            @elseif ($average == 5)
+                                            <div class="product-rating" style="width: 100%"></div>
+                                            @endif
+
                                         </div>
 
                                         @if ($product->discount_price == NULL)
