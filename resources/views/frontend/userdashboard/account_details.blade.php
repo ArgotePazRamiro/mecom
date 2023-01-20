@@ -1,12 +1,18 @@
 @extends('dashboard')
 @section('user')
 
+@section('title')
+
+Detalles de Cuenta
+
+@endsection
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <div class="page-header breadcrumb-wrap">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+            <a href="{{ url('/') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
             <span></span> Detalles de Cuenta
         </div>
     </div>
