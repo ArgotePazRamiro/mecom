@@ -1,6 +1,12 @@
 @extends('frontend.master_dashboard')
 @section('main')
 
+@section('title')
+
+    EasyBuy Tienda Online
+
+@endsection
+
 <!--Hero slider-->
 
 @include('frontend.home.home_slider')

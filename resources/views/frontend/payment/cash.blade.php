@@ -1,6 +1,12 @@
 @extends('frontend.master_dashboard')
 @section('main')
 
+@section('title')
+
+Pago en Efectivo al Entregar
+
+@endsection
+
 <style>
     /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
@@ -34,7 +40,7 @@
 <div class="page-header breadcrumb-wrap">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+            <a href="{{ url('/') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
             <span></span> Pago en Efectivo al Entregar
         </div>
     </div>

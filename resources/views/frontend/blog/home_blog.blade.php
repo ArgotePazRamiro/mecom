@@ -1,6 +1,12 @@
 @extends('frontend.master_dashboard')
 @section('main')
 
+@section('title')
+
+Blog & Noticias
+
+@endsection
+
 <div class="page-header mt-30 mb-75">
     <div class="container">
         <div class="archive-header">
@@ -8,7 +14,7 @@
                 <div class="col-xl-3">
                     <h1 class="mb-15">Blog & Noticias</h1>
                     <div class="breadcrumb">
-                        <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                        <a href="{{ url('/') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
                         <span></span> Blog & Noticias
                     </div>
                 </div>
