@@ -22,6 +22,7 @@ use App\Http\Controllers\Backend\ReturnController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\ActiveUserController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\SiteSettingController;
 
 use App\Http\Middleware\RedirectIfAuthenticated;
 
@@ -345,6 +346,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/review/approve/{id}', 'ReviewApprove')->name('review.approve');
     Route::get('/publish/review', 'PublishReview')->name('publish.review');
     Route::get('/review/delete/{id}', 'ReviewDelete')->name('review.delete');
+
+    });
+
+    //Admin Site Setting All Route
+    Route::controller(SiteSettingController::class)->group(function () {
+    Route::get('/site/setting', 'SiteSetting')->name('site.setting');
+    Route::post('/site/setting/update', 'SiteSettingUpdate')->name('site.setting.update');
+    Route::get('/seo/setting', 'SeoSetting')->name('seo.setting');
+    Route::post('/seo/setting/update', 'SeoSettingUpdate')->name('seo.setting.update');
+
 
     });
 
