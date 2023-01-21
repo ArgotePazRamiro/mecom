@@ -134,7 +134,7 @@
 
                             <tr>
                                 <th>Total del Monto:</th>
-                                <th>{{ $order->amount }}</th>
+                                <th>{{ $order->amount }} Bs.</th>
                             </tr>
 
                             <tr>

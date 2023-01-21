@@ -303,6 +303,21 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Manejo de Stock</div>
+            </a>
+            <ul>
+
+                <li> 
+                    <a href="{{ route('product.stock') }}"><i class="bx bx-right-arrow-alt"></i>Stock de Productos</a>
+                </li>
+               
+            </ul>
+        </li>
+
         
         
         <li>
