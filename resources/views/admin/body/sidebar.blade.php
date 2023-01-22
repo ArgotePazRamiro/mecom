@@ -342,7 +342,7 @@
                     <a href="{{ route('all.permission') }}"><i class="bx bx-right-arrow-alt"></i>Permisos</a>
                 </li>
                 <li> 
-                    <a href="charts-chartjs.html"><i class="bx bx-right-arrow-alt"></i>Añadir Permisos</a>
+                    <a href="{{ route('all.roles') }}"><i class="bx bx-right-arrow-alt"></i>Roles</a>
                 </li>
 
             </ul>

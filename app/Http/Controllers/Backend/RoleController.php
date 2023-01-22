@@ -90,4 +90,83 @@ class RoleController extends Controller
 
     }// End Method
     
+    /////////////////////////////////////////// ROLES //////////////////////////////////////////
+
+    public function AllRoles()
+    {
+        
+        $roles = Role::all();
+
+        return view('backend.pages.roles.all_roles', compact('roles'));
+
+    }// End Method
+
+    public function AddRoles()
+    {
+        
+        return view('backend.pages.roles.add_roles');
+
+    }// End Method
+
+    public function StoreRoles(Request $request)
+    {
+        
+        $role = Role::create([
+
+            'name' => $request->name,
+
+        ]);
+        
+        $notification = array(
+            'message' => 'Rol Insertado Correctamente',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('all.roles')->with($notification);
+
+    }// End Method
+
+    public function EditRoles($id)
+    {
+        
+        $roles = Role::findOrFail($id);
+
+        return view('backend.pages.roles.edit_roles', compact('roles'));
+
+    }// End Method
+
+    public function UpdateRoles(Request $request)
+    {
+        
+        $rol_id = $request->id;
+
+        Role::findOrFail($rol_id)->update([
+
+            'name' => $request->name,
+
+        ]);
+        
+        $notification = array(
+            'message' => 'Rol Actualizado Correctamente',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('all.roles')->with($notification);
+
+    }// End Method
+
+    public function DeleteRoles($id)
+    {
+        
+        Role::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Rol Eliminado Correctamente',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->back()->with($notification);
+
+    }// End Method
+
 }
