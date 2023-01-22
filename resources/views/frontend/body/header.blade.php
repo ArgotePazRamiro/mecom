@@ -3,18 +3,21 @@
 <header class="header-area header-style-1 header-height-2">
 
     @php
-        $setting = App\Models\SiteSetting::find(1);
+    $setting = App\Models\SiteSetting::find(1);
     @endphp
 
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="index.html"><img src="{{ asset($setting->logo) }}" alt="logo" /></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset($setting->logo) }}" alt="logo" /></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
-                        <form action="#">
+
+                        <form action="{{ route('product.search') }}" method="POST">
+                            @csrf
+
                             <select class="select-active">
                                 <option>All Categories</option>
                                 <option>Milks and Dairies</option>
@@ -28,8 +31,11 @@
                                 <option>Noodles & Rice</option>
                                 <option>Ice cream</option>
                             </select>
-                            <input type="text" placeholder="Search for items..." />
+                            <input onfocus="search_result_show()" onblur="search_result_hide()" name="search"
+                                id="search" placeholder="Buscar Productos..." />
+                            <div id="searchProducts"></div>
                         </form>
+
                     </div>
                     <div class="header-action-right">
                         <div class="header-action-2">
@@ -53,10 +59,11 @@
                                     </select>
                                 </form>
                             </div>
-                           
+
                             <div class="header-action-icon-2">
                                 <a href="{{ route('compare') }}">
-                                    <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-compare.svg') }}" />
+                                    <img class="svgInject" alt="Nest"
+                                        src="{{ asset('frontend/assets/imgs/theme/icons/icon-compare.svg') }}" />
                                     <span class="pro-count blue" id="compareQty">0</span>
                                 </a>
                                 <a href="{{ route('compare') }}"><span class="lable m1-0">Comparar</span></a>
@@ -64,7 +71,8 @@
 
                             <div class="header-action-icon-2">
                                 <a href="shop-wishlist.html">
-                                    <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-heart.svg') }}" />
+                                    <img class="svgInject" alt="Nest"
+                                        src="{{ asset('frontend/assets/imgs/theme/icons/icon-heart.svg') }}" />
                                     <span class="pro-count blue" id="wishQty">0</span>
                                 </a>
                                 <a href="{{ route('wishlist') }}"><span class="lable">Lista de Deseos</span></a>
@@ -73,7 +81,8 @@
 
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="shop-cart.html">
-                                    <img alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-cart.svg') }}" />
+                                    <img alt="Nest"
+                                        src="{{ asset('frontend/assets/imgs/theme/icons/icon-cart.svg') }}" />
                                     <span class="pro-count blue" id="cartQty">0</span>
                                 </a>
                                 <a href="{{ route('mycart') }}"><span class="lable">Mi Carrito</span></a>
@@ -105,31 +114,38 @@
 
                             <div class="header-action-icon-2">
                                 <a href="page-account.html">
-                                    <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-user.svg') }}" />
+                                    <img class="svgInject" alt="Nest"
+                                        src="{{ asset('frontend/assets/imgs/theme/icons/icon-user.svg') }}" />
                                 </a>
 
                                 @auth
-                                
+
                                 <a href="page-account.html"><span class="lable ml-0">Cuenta</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-user mr-10"></i>Mi Cuenta</a>
+                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-user mr-10"></i>Mi
+                                                Cuenta</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-location-alt mr-10"></i>Rastreo de orden</a>
+                                            <a href="{{ route('dashboard') }}"><i
+                                                    class="fi fi-rs-location-alt mr-10"></i>Rastreo de orden</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-label mr-10"></i>Mis cupones</a>
+                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-label mr-10"></i>Mis
+                                                cupones</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-heart mr-10"></i>Lista de Deseos</a>
+                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-heart mr-10"></i>Lista
+                                                de Deseos</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-settings-sliders mr-10"></i>Ajustes</a>
+                                            <a href="{{ route('dashboard') }}"><i
+                                                    class="fi fi-rs-settings-sliders mr-10"></i>Ajustes</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('user.logout') }}"><i class="fi fi-rs-sign-out mr-10"></i>Desconectar</a>
+                                            <a href="{{ route('user.logout') }}"><i
+                                                    class="fi fi-rs-sign-out mr-10"></i>Desconectar</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -141,7 +157,7 @@
 
                                 @endauth
 
-                                
+
                             </div>
                         </div>
                     </div>
@@ -156,7 +172,7 @@
 
 
     @php
-        
+
     $categories = App\Models\Category::orderBy('category_name', 'ASC')->get();
 
     @endphp
@@ -170,7 +186,7 @@
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
                         <a class="categories-button-active" href="#">
-                            <span class="fi-rs-apps"></span>   Categorías
+                            <span class="fi-rs-apps"></span> Categorías
                             <i class="fi-rs-angle-down"></i>
                         </a>
                         <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
@@ -179,25 +195,27 @@
 
                                     @foreach ($categories as $item)
 
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />
-                                                {{ $item->category_name }}
-                                            </a>
-                                        </li>
+                                    <li>
+                                        <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}"
+                                                alt="" />
+                                            {{ $item->category_name }}
+                                        </a>
+                                    </li>
 
                                     @endforeach
-                                    
-                                    
+
+
                                 </ul>
                                 <ul class="end">
 
                                     @foreach ($categories as $item)
 
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />
-                                                {{ $item->category_name }}
-                                            </a>
-                                        </li>
+                                    <li>
+                                        <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}"
+                                                alt="" />
+                                            {{ $item->category_name }}
+                                        </a>
+                                    </li>
 
                                     @endforeach
 
@@ -208,41 +226,49 @@
                                 <div class="d-flex categori-dropdown-inner">
                                     <ul>
                                         <li>
-                                            <a href="shop-grid-right.html"> 
-                                                <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-1.svg') }}" alt="" />Milks and Dairies</a>
+                                            <a href="shop-grid-right.html">
+                                                <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-1.svg') }}"
+                                                    alt="" />Milks and Dairies</a>
                                         </li>
                                         <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-2.svg') }}" alt="" />Clothing & beauty</a>
+                                            <a href="shop-grid-right.html"> <img
+                                                    src="{{ asset('frontend/assets/imgs/theme/icons/icon-2.svg') }}"
+                                                    alt="" />Clothing & beauty</a>
                                         </li>
                                     </ul>
                                     <ul class="end">
                                         <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-3.svg') }}" alt="" />Wines & Drinks</a>
+                                            <a href="shop-grid-right.html"> <img
+                                                    src="{{ asset('frontend/assets/imgs/theme/icons/icon-3.svg') }}"
+                                                    alt="" />Wines & Drinks</a>
                                         </li>
                                         <li>
-                                            <a href="shop-grid-right.html"> <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-4.svg') }}" alt="" />Fresh Seafood</a>
+                                            <a href="shop-grid-right.html"> <img
+                                                    src="{{ asset('frontend/assets/imgs/theme/icons/icon-4.svg') }}"
+                                                    alt="" />Fresh Seafood</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show more...</span></div>
+                            <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show
+                                    more...</span></div>
                         </div>
                     </div>
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                         <nav>
                             <ul>
-                                
+
                                 <li>
                                     <a class="active" href="{{ url('/') }}">Inicio</a>
-                                    
+
                                 </li>
 
                                 @php
-        
+
                                 $categories = App\Models\Category::orderBy('category_name', 'ASC')->limit(6)->get();
 
                                 @endphp
-                                
+
                                 @foreach ($categories as $category)
                                 <li>
                                     <a href="{{ url('product/category/'.$category->id.'/'.$category->category_slug) }}">
@@ -250,29 +276,31 @@
                                     </a>
 
                                     @php
-        
-                                    $subcategories = App\Models\SubCategory::where('category_id', $category->id)->orderBy('subcategory_name', 'ASC')->get();
+
+                                    $subcategories = App\Models\SubCategory::where('category_id',
+                                    $category->id)->orderBy('subcategory_name', 'ASC')->get();
 
                                     @endphp
 
                                     <ul class="sub-menu">
-                                        
+
                                         @foreach ($subcategories as $subcategory)
                                         <li>
-                                            <a href="{{ url('product/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">
+                                            <a
+                                                href="{{ url('product/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">
                                                 {{ $subcategory->subcategory_name }}
                                             </a>
                                         </li>
                                         @endforeach
-                                        
+
                                     </ul>
 
-                                </li> 
+                                </li>
                                 @endforeach
-                                
+
 
                                 <li>
-                                    
+
                                     <a href=" {{ route('home.blog') }}">Blog</a>
 
                                 </li>
@@ -311,7 +339,8 @@
                                 <ul>
                                     <li>
                                         <div class="shopping-cart-img">
-                                            <a href="shop-product-right.html"><img alt="Nest" src="{{ asset('frontend/assets/imgs/shop/thumbnail-3.jpg') }}" /></a>
+                                            <a href="shop-product-right.html"><img alt="Nest"
+                                                    src="{{ asset('frontend/assets/imgs/shop/thumbnail-3.jpg') }}" /></a>
                                         </div>
                                         <div class="shopping-cart-title">
                                             <h4><a href="shop-product-right.html">Plain Striola Shirts</a></h4>
@@ -323,7 +352,8 @@
                                     </li>
                                     <li>
                                         <div class="shopping-cart-img">
-                                            <a href="shop-product-right.html"><img alt="Nest" src="{{ asset('frontend/assets/imgs/shop/thumbnail-4.jpg') }}" /></a>
+                                            <a href="shop-product-right.html"><img alt="Nest"
+                                                    src="{{ asset('frontend/assets/imgs/shop/thumbnail-4.jpg') }}" /></a>
                                         </div>
                                         <div class="shopping-cart-title">
                                             <h4><a href="shop-product-right.html">Macbook Pro 2022</a></h4>
@@ -352,6 +382,37 @@
     </div>
 </header>
 
+{{-- END HEADER --}}
+
+<style>
+    #searchProducts {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        z-index: 999;
+        border-radius: 8px;
+        margin-top: 5px;
+    }
+</style>
+
+<script>
+
+    function search_result_show() {
+
+        $("#searchProducts").slideDown();
+        
+    }
+
+    function search_result_hide() {
+        
+        $("#searchProducts").slideUp();
+
+    }
+
+</script>
+
 
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="mobile-header-wrapper-inner">
@@ -379,7 +440,7 @@
                     <ul class="mobile-menu font-heading">
                         <li class="menu-item-has-children">
                             <a href="{{ url('/') }}">Inicio</a>
-                             
+
                         </li>
                         <li class="menu-item-has-children">
                             <a href="shop-grid-right.html">shop</a>
@@ -416,7 +477,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <li class="menu-item-has-children">
                             <a href="#">Mega menu</a>
                             <ul class="dropdown">
@@ -508,11 +569,16 @@
             </div>
             <div class="mobile-social-icon mb-50">
                 <h6 class="mb-15">Follow Us</h6>
-                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-facebook-white.svg') }}" alt="" /></a>
-                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-twitter-white.svg') }}" alt="" /></a>
-                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-instagram-white.svg') }}" alt="" /></a>
-                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-pinterest-white.svg') }}" alt="" /></a>
-                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-youtube-white.svg') }}" alt="" /></a>
+                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-facebook-white.svg') }}"
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-twitter-white.svg') }}"
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-instagram-white.svg') }}"
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-pinterest-white.svg') }}"
+                        alt="" /></a>
+                <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-youtube-white.svg') }}"
+                        alt="" /></a>
             </div>
             <div class="site-copyright">Copyright 2022 © Ramiro Argote Paz. All rights reserved.</div>
         </div>
