@@ -101,4 +101,35 @@ class AllUserController extends Controller
 
     }// End Method
 
+    public function UserTrackOrder()
+    {
+        
+        return view('frontend.userdashboard.user_track_order');
+
+    }// End Method
+
+    public function OrderTracking(Request $request)
+    {
+        
+        $invoice = $request->code;
+
+        $track = Order::where('invoice_no', $invoice)->first();
+
+        if ($track) {
+            
+            return view('frontend.tracking.track_order', compact('track'));
+
+        }else{
+
+            $notification = array(
+                'message' => 'Código de Factura Inválido',
+                'alert-type' => 'error',
+            );
+    
+            return redirect()->back()->with($notification);
+
+        }
+
+    }// End Method
+
 }

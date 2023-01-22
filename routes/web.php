@@ -484,8 +484,13 @@ Route::middleware(['auth','role:user'])->group(function() {
         Route::get('/user/invoice_download/{order_id}', 'UserOrderInvoice');
         Route::post('/return/order/{order_id}', 'ReturnOrder')->name('return.order');
         Route::get('/return/order/page', 'ReturnOrderPage')->name('return.order.page');
+        //Order Tracking 
+        Route::get('/user/track/order', 'UserTrackOrder')->name('user.track.order');
+        Route::post('/order/tracking', 'OrderTracking')->name('order.tracking');
 
     });
+
+    
 
 });  //End Group User Middleware
 
