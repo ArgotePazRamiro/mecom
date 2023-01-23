@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Cache;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -48,4 +49,44 @@ class User extends Authenticatable
         return Cache::has('user-is-online' . $this->id);
         
     }//End Method
+
+    public static function getpermissionGroups()
+    {
+        
+        $permission_groups = DB::table('permissions')->select('group_name')->groupBy('group_name')->get();
+
+        return $permission_groups;
+
+    }//End Method
+
+    public static function getpermissionByGroupName($group_name)
+    {
+
+        $permissions = DB::table('permissions')->select('name', 'id')->where('group_name', $group_name)->get();
+
+        return $permissions;
+
+    }//End Method
+
+    public static function roleHasPermission($role, $permissions)
+    {
+
+        $hasPermission = true;
+        
+        foreach ($permissions as $permission) {
+            
+            if (!$role->hasPermissionTo($permission->name)) {
+                
+                $hasPermission = false;
+                return $hasPermission;
+
+            }
+
+            return $hasPermission;
+
+        }
+
+    }//End Method
+
+
 }
