@@ -24,7 +24,7 @@
     <div class="card">
         <div class="card-body p-4">
             <h5 class="card-title">Añadir Nuevo Producto</h5>
-            <hr />
+            <hr/>
 
             <form id="myForm" method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                 @csrf
@@ -320,7 +320,7 @@
             });
              
         }else{
-            alert("Your browser doesn't support File API!"); //if File API is absent
+            alert("Su navegador no es compatible con File API!"); //if File API is absent
         }
      });
     });

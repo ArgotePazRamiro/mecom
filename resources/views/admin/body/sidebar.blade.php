@@ -345,10 +345,25 @@
                     <a href="{{ route('all.roles') }}"><i class="bx bx-right-arrow-alt"></i>Roles</a>
                 </li>
                 <li> 
-                    <a href="{{ route('add.roles.permission') }}"><i class="bx bx-right-arrow-alt"></i>Permisos de Rol</a>
+                    <a href="{{ route('add.roles.permission') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Permisos</a>
                 </li>
                 <li> 
                     <a href="{{ route('all.roles.permission') }}"><i class="bx bx-right-arrow-alt"></i>Roles y Permisos</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-line-chart"></i>
+                </div>
+                <div class="menu-title">Manejo Admin</div>
+            </a>
+            <ul>
+                <li> 
+                    <a href="{{ route('all.admin') }}"><i class="bx bx-right-arrow-alt"></i>Administradores</a>
+                </li>
+                <li> 
+                    <a href="{{ route('add.admin') }}"><i class="bx bx-right-arrow-alt"></i>Añadir Admin</a>
                 </li>
             </ul>
         </li>
