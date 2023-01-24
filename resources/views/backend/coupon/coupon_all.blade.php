@@ -15,11 +15,13 @@
                 </ol>
             </nav>
         </div>
-        <div class="ms-auto">
-            <div class="btn-group">
-                <a href="{{ route('add.coupon') }}" class="btn btn-primary"> Añadir Cupón</a>
+        @if (Auth::user()->can('coupon.add'))
+            <div class="ms-auto">
+                <div class="btn-group">
+                    <a href="{{ route('add.coupon') }}" class="btn btn-primary"> Añadir Cupón</a>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
     <!--end breadcrumb-->
 
@@ -57,8 +59,12 @@
 
                             </td>
                             <td>
+                                @if (Auth::user()->can('coupon.edit'))
                                 <a href="{{ route('edit.coupon',$item->id) }}" class="btn btn-info">Editar</a>
+                                @endif
+                                @if (Auth::user()->can('coupon.delete'))
                                 <a href="{{ route('delete.coupon', $item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

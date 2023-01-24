@@ -15,11 +15,13 @@
                 </ol>
             </nav>
         </div>
+        @if (Auth::user()->can('brand.add'))
         <div class="ms-auto">
             <div class="btn-group">
                 <a href="{{ route('add.brand') }}" class="btn btn-primary"> Añadir Marca</a>
             </div>
         </div>
+        @endif
     </div>
     <!--end breadcrumb-->
 
@@ -44,8 +46,12 @@
                             <td>{{ $item->brand_name }}</td>
                             <td><img src="{{ asset($item->brand_image) }}" style="width:70px;height:40px"></td>
                             <td>
+                                @if (Auth::user()->can('brand.edit'))
                                 <a href="{{ route('edit.brand',$item->id) }}" class="btn btn-info">Editar</a>
+                                @endif
+                                @if (Auth::user()->can('brand.delete'))
                                 <a href="{{ route('delete.brand', $item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
