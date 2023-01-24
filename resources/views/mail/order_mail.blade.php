@@ -63,7 +63,7 @@
                                             Hola!</h1>
                                         <p
                                             style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                            Está recibiendo este correo electrónico de su producto de la tienda.</p>
+                                            Está recibiendo este correo electrónico por su orden realizada en nuestra plataforma de Comercio.</p>
                                         <table class="action" align="center" width="100%" cellpadding="0"
                                             cellspacing="0" role="presentation"
                                             style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%;">
@@ -85,8 +85,7 @@
 
                                                                         </td>
 
-                                                                        <td> Número de Factura : {{ $order['invoice_no']
-                                                                            }}</td>
+                                                                        <td> Número de Factura : {{ $order['invoice_no'] }}</td>
                                                                         <td> Cantidad : {{ $order['amount'] }} Bs.</td>
                                                                         <td> Nombre : {{ $order['name'] }}</td>
                                                                         <td> Email : {{ $order['email'] }}</td>
@@ -126,7 +125,7 @@
                                         style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
                                         <p
                                             style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; color: #b0adc5; font-size: 12px; text-align: center;">
-                                            © 2021 Laravel. All rights reserved.</p>
+                                            © 2021 EasyBuy. Todos los Derechos Reservados.</p>
 
                                     </td>
                                 </tr>

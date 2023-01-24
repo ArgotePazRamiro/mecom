@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderMail;
+use App\Models\User;
+use App\Notifications\OrderComplete;
+use Illuminate\Support\Facades\Notification;
 
 class StripeController extends Controller
 {
@@ -129,6 +132,8 @@ class StripeController extends Controller
 
     public function CashOrder(Request $request)
     {
+
+        $user = User::where('role', 'admin')->get();
         
         if (Session::has('coupon')) {
             
@@ -218,6 +223,8 @@ class StripeController extends Controller
             'message' => 'Su Orden fue Hecha Satisfactoriamente',
             'alert-type' => 'success',
         );
+
+        Notification::send($user, new OrderComplete($request->name));
 
         return redirect()->route('dashboard')->with($notification);
 

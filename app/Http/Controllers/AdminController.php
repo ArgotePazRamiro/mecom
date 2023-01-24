@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
+use App\Notifications\VendorApproveNotification;
+use Illuminate\Support\Facades\Notification;
+
 class AdminController extends Controller
 {
     public function AdminDashboard()
@@ -129,6 +132,10 @@ class AdminController extends Controller
             'message' => 'Vendedor Activado Satisfactoriamente',
             'alert-type' => 'success',
         );
+        
+        $vuser = User::where('role', 'vendor')->get();
+
+        Notification::send($vuser, new VendorApproveNotification($request));
 
         return redirect()->route('active.vendor')->with($notification);
 
