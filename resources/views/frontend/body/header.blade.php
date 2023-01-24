@@ -18,19 +18,6 @@
                         <form action="{{ route('product.search') }}" method="POST">
                             @csrf
 
-                            <select class="select-active">
-                                <option>All Categories</option>
-                                <option>Milks and Dairies</option>
-                                <option>Wines & Alcohol</option>
-                                <option>Clothing & Beauty</option>
-                                <option>Pet Foods & Toy</option>
-                                <option>Fast food</option>
-                                <option>Baking material</option>
-                                <option>Vegetables</option>
-                                <option>Fresh Seafood</option>
-                                <option>Noodles & Rice</option>
-                                <option>Ice cream</option>
-                            </select>
                             <input onfocus="search_result_show()" onblur="search_result_hide()" name="search"
                                 id="search" placeholder="Buscar Productos..." />
                             <div id="searchProducts"></div>
@@ -175,12 +162,16 @@
 
                                     @foreach ($categories as $item)
 
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}"
-                                                alt="" />
-                                            {{ $item->category_name }}
-                                        </a>
-                                    </li>
+                                        @if ($loop->index < 6)  
+        
+                                            <li>
+                                                <a href="{{ url('product/category/'.$item->id.'/'.$item->category_slug) }}"> 
+                                                    <img src="{{ asset($item->category_image) }}" alt="" />
+                                                    {{ $item->category_name }}
+                                                </a>
+                                            </li>
+
+                                        @endif
 
                                     @endforeach
 
@@ -190,48 +181,23 @@
 
                                     @foreach ($categories as $item)
 
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}"
-                                                alt="" />
-                                            {{ $item->category_name }}
-                                        </a>
-                                    </li>
+                                        @if ($loop->index > 5)  
+
+                                            <li>
+                                                <a href="{{ url('product/category/'.$item->id.'/'.$item->category_slug) }}"> 
+                                                    <img src="{{ asset($item->category_image) }}" alt="" />
+                                                    {{ $item->category_name }}
+                                                </a>
+                                            </li>
+
+                                        @endif
 
                                     @endforeach
 
                                 </ul>
 
                             </div>
-                            <div class="more_slide_open" style="display: none">
-                                <div class="d-flex categori-dropdown-inner">
-                                    <ul>
-                                        <li>
-                                            <a href="shop-grid-right.html">
-                                                <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-1.svg') }}"
-                                                    alt="" />Milks and Dairies</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img
-                                                    src="{{ asset('frontend/assets/imgs/theme/icons/icon-2.svg') }}"
-                                                    alt="" />Clothing & beauty</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="end">
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img
-                                                    src="{{ asset('frontend/assets/imgs/theme/icons/icon-3.svg') }}"
-                                                    alt="" />Wines & Drinks</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img
-                                                    src="{{ asset('frontend/assets/imgs/theme/icons/icon-4.svg') }}"
-                                                    alt="" />Fresh Seafood</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show
-                                    more...</span></div>
+                            
                         </div>
                     </div>
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
