@@ -11,16 +11,14 @@ $setting = App\Models\SiteSetting::find(1);
                 <div class="col-lg-12">
                     <div class="position-relative newsletter-inner">
                         <div class="newsletter-content">
+
                             <h2 class="mb-20">
-                                Stay home & get your daily <br />
-                                needs from our shop
+                                Quédate en casa y recibe tus necesidades <br />
+                                de componentes de nuestra tienda
                             </h2>
-                            <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">Nest Mart</span>
+                            <p class="mb-45">Empieza tu compra con <span class="text-brand">EasyBuy</span>
                             </p>
-                            <form class="form-subcriber d-flex">
-                                <input type="email" placeholder="Your emaill address" />
-                                <button class="btn" type="submit">Subscribe</button>
-                            </form>
+                            
                         </div>
                         <img src="{{ asset('frontend/assets/imgs/banner/banner-9.png') }}" alt="newsletter" />
                     </div>
@@ -28,84 +26,7 @@ $setting = App\Models\SiteSetting::find(1);
             </div>
         </div>
     </section>
-    <section class="featured section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
-                    <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                        data-wow-delay="0">
-                        <div class="banner-icon">
-                            <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-1.svg') }}" alt="" />
-                        </div>
-                        <div class="banner-text">
-                            <h3 class="icon-box-title">Best prices & offers</h3>
-                            <p>Orders $50 or more</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                        data-wow-delay=".1s">
-                        <div class="banner-icon">
-                            <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-2.svg') }}" alt="" />
-                        </div>
-                        <div class="banner-text">
-                            <h3 class="icon-box-title">Free delivery</h3>
-                            <p>24/7 amazing services</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                        data-wow-delay=".2s">
-                        <div class="banner-icon">
-                            <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-3.svg') }}" alt="" />
-                        </div>
-                        <div class="banner-text">
-                            <h3 class="icon-box-title">Great daily deal</h3>
-                            <p>When you sign up</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                        data-wow-delay=".3s">
-                        <div class="banner-icon">
-                            <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-4.svg') }}" alt="" />
-                        </div>
-                        <div class="banner-text">
-                            <h3 class="icon-box-title">Wide assortment</h3>
-                            <p>Mega Discounts</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                        data-wow-delay=".4s">
-                        <div class="banner-icon">
-                            <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-5.svg') }}" alt="" />
-                        </div>
-                        <div class="banner-text">
-                            <h3 class="icon-box-title">Easy returns</h3>
-                            <p>Within 30 days</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
-                    <div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
-                        data-wow-delay=".5s">
-                        <div class="banner-icon">
-                            <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-6.svg') }}" alt="" />
-                        </div>
-                        <div class="banner-text">
-                            <h3 class="icon-box-title">Safe delivery</h3>
-                            <p>Within 30 days</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="section-padding footer-mid">
         <div class="container pt-15 pb-20">
             <div class="row">
@@ -180,6 +101,7 @@ $setting = App\Models\SiteSetting::find(1);
 
             </div>
     </section>
+
     <div class="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">
         <div class="row align-items-center">
             <div class="col-12 mb-30">
@@ -209,4 +131,5 @@ $setting = App\Models\SiteSetting::find(1);
             </div>
         </div>
     </div>
+
 </footer>
