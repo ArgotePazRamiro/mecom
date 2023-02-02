@@ -227,16 +227,7 @@
             <div class="payment ml-30">
                 <h4 class="mb-30">Pago</h4>
                 <div class="payment_option">
-                    <div class="custome-radio">
-
-                        <input class="form-check-input" required="" type="radio" name="payment_option" value="stripe"
-                            id="exampleRadios3" checked="">
-                        <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse"
-                            data-target="#bankTranfer" aria-controls="bankTranfer">
-                            Stripe
-                        </label>
-
-                    </div>
+                    
                     <div class="custome-radio">
 
                         <input class="form-check-input" required="" type="radio" name="payment_option" value="cash"
@@ -249,20 +240,18 @@
                     </div>
                     <div class="custome-radio">
 
-                        <input class="form-check-input" required="" type="radio" name="payment_option" value="card"
-                            id="exampleRadios5" checked="">
-                        <label class="form-check-label" for="exampleRadios5" data-bs-toggle="collapse"
-                            data-target="#paypal" aria-controls="paypal">
-                            Tarjeta de Débito o Crédito
+                        <input class="form-check-input" required="" type="radio" name="payment_option" value="stripe"
+                            id="exampleRadios3" checked="">
+                        <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse"
+                            data-target="#bankTranfer" aria-controls="bankTranfer">
+                            Tarjeta de Débito o Crédito (Stripe)
                         </label>
 
                     </div>
                 </div>
                 <div class="payment-logo d-flex">
-                    <img class="mr-15" src="{{ asset('frontend/assets/imgs/theme/icons/payment-paypal.svg') }}" alt="">
                     <img class="mr-15" src="{{ asset('frontend/assets/imgs/theme/icons/payment-visa.svg') }}" alt="">
                     <img class="mr-15" src="{{ asset('frontend/assets/imgs/theme/icons/payment-master.svg') }}" alt="">
-                    <img src="{{ asset('frontend/assets/imgs/theme/icons/payment-zapper.svg') }}" alt="">
                 </div>
                 <button href="#" class="btn btn-fill-out btn-block mt-30">Haga su Pedido<i
                         class="fi-rs-sign-out ml-15"></i></button>

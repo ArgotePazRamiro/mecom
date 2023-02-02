@@ -36,7 +36,6 @@
                             <th>Email</th>
                             <th>Teléfono</th>
                             <th>Estado</th>
-                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,11 +51,12 @@
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->phone }}</td>
 
-                            <td><span class="badge badge-pill bg-success">{{ $item->status }}</span></td>
-
                             <td>
-                                <a href="{{ route('edit.subcategory',$item->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('delete.subcategory', $item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
+                                @if ($item->status == 'active')
+                                    <span class="badge badge-pill bg-success">{{ $item->status }}</span> 
+                                @else
+                                    <span class="badge badge-pill bg-danger">{{ $item->status }}</span>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
@@ -70,7 +70,6 @@
                             <th>Email</th>
                             <th>Teléfono</th>
                             <th>Estado</th>
-                            <th>Acción</th>
                         </tr>
                     </tfoot>
                 </table>
