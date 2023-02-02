@@ -83,7 +83,6 @@
                             <td>
                                 <a href="{{ route('vendor.edit.product',$item->id) }}" class="btn btn-info" title="Editar"><i class="fa fa-pencil"></i></a>
                                 <a href="{{ route('vendor.delete.product', $item->id) }}" class="btn btn-danger" id="delete" title="Eliminar"><i class="fa fa-trash"></i></a>
-                                <a href="{{ route('edit.category',$item->id) }}" class="btn btn-warning" title="Página de Detalles"><i class="fa fa-eye"></i></a>
 
                                 @if ($item->status == 1)
 

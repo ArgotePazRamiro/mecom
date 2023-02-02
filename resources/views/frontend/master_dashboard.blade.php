@@ -470,13 +470,9 @@
                             </td>
                             <td class="image product-thumbnail pt-40"><img src="/${value.product.product_thambnail}" alt="#" /></td>
                             <td class="product-des product-name">
+                                
                                 <h6><a class="product-name mb-10" href="shop-product-right.html">${value.product.product_name}</a></h6>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 90%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                </div>
+
                             </td>
                             <td class="price" data-title="Price">
                                 ${value.product.discount_price == null
@@ -627,50 +623,51 @@
                         
                         rows += `
 
-                        <tr class="pr_image">
-                            <td class="text-muted font-sm fw-600 font-heading mw-200">Vista Anticipada</td>
-                            <td class="row_img"><img src="/${value.product.product_thambnail}" style="width:300px; height:300px;" alt="compare-img" /></td>
-                        </tr>
-                        <tr class="pr_title">
-                            <td class="text-muted font-sm fw-600 font-heading">Nombre</td>
-                            <td class="product_name">
-                                <h6><a href="shop-product-full.html" class="text-heading">${value.product.product_name}</a></h6>
-                            </td>
-                        </tr>
-                        <tr class="pr_price">
-                            <td class="product_price">
-                                ${value.product.discount_price == null
-                                ?`<h4 class="price text-brand">${value.product.selling_price} Bs.</h4>`
-                                :`<h4 class="price text-brand">${value.product.discount_price} Bs.</h4>`
-                                }
-                            </td>
-                        </tr>
-                        
-                        <tr class="description">
-                            <td class="text-muted font-sm fw-600 font-heading">Descripción</td>
-                            <td class="row_text font-xs">
-                                <p class="font-sm text-muted">${value.product.short_descp}</p>
-                            </td>
-                        </tr>
-                        <tr class="pr_stock">
-                            <td class="text-muted font-sm fw-600 font-heading">Inventario</td>
+                            <tr class="pr_image">
+                                <td class="text-muted font-sm fw-600 font-heading mw-200">Vista Anticipada</td>
+                                <td class="row_img"><img src="/${value.product.product_thambnail}" style="width:300px; height:300px;" alt="compare-img" /></td>
+                            </tr>
+                            <tr class="pr_title">
+                                <td class="text-muted font-sm fw-600 font-heading">Nombre</td>
+                                <td class="product_name">
+                                    <h6><a href="shop-product-full.html" class="text-heading">${value.product.product_name}</a></h6>
+                                </td>
+                            </tr>
+                            <tr class="pr_price">
+                                <td class="text-muted font-sm fw-600 font-heading">Precio</td>
+                                <td class="product_price">
+                                    ${value.product.discount_price == null
+                                    ?`<h4 class="price text-brand">${value.product.selling_price} Bs.</h4>`
+                                    :`<h4 class="price text-brand">${value.product.discount_price} Bs.</h4>`
+                                    }
+                                </td>
+                            </tr>
                             
-                            <td class="row_stock">
-                                ${value.product.product_qty > 0
-                                ?`<span class="stock-status in-stock mb-0"> En Stock </span>`
-                                :`<span class="stock-status out-stock mb-0"> Agotado </span>`
-                                }
-                            </td>
-                        </tr>
-                        
-                        <tr class="pr_remove text-muted">
-                            <td class="text-muted font-md fw-600"></td>
-                            <td class="row_remove">
-                                <a type="submit" class="text-muted" id="${value.id}" onclick="compareRemove(this.id)">
-                                    <i class="fi-rs-trash mr-5"></i><span>Remove</span> 
-                                </a>
-                            </td>
-                        </tr>
+                            <tr class="description">
+                                <td class="text-muted font-sm fw-600 font-heading">Descripción</td>
+                                <td class="row_text font-xs">
+                                    <p class="font-sm text-muted">${value.product.short_descp}</p>
+                                </td>
+                            </tr>
+                            <tr class="pr_stock">
+                                <td class="text-muted font-sm fw-600 font-heading">Inventario</td>
+                                
+                                <td class="row_stock">
+                                    ${value.product.product_qty > 0
+                                    ?`<span class="stock-status in-stock mb-0"> En Stock </span>`
+                                    :`<span class="stock-status out-stock mb-0"> Agotado </span>`
+                                    }
+                                </td>
+                            </tr>
+                            
+                            <tr class="pr_remove text-muted">
+                                <td class="text-muted font-md fw-600"></td>
+                                <td class="row_remove">
+                                    <a type="submit" class="text-muted" id="${value.id}" onclick="compareRemove(this.id)">
+                                        <i class="fi-rs-trash mr-5"></i><span>Remove</span> 
+                                    </a>
+                                </td>
+                            </tr>
                         
                         `
 

@@ -89,8 +89,7 @@
                                         class="fa fa-pencil"></i></a>
                                 @endif
                                 @if (Auth::user()->can('product.delete'))
-                                <a href="{{ route('delete.product', $item->id) }}" class="btn btn-danger" id="delete"
-                                    title="Eliminar"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('delete.product', $item->id) }}" class="btn btn-danger" id="delete" title="Eliminar"><i class="fa fa-trash"></i></a>
                                 @endif
 
                                 @if ($item->status == 1)
