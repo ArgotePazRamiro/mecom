@@ -36,7 +36,6 @@
                             <th>Email</th>
                             <th>Teléfono</th>
                             <th>Estado</th>
-                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,10 +63,6 @@
                                            
                             </td>
 
-                            <td>
-                                <a href="{{ route('edit.subcategory',$item->id) }}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('delete.subcategory', $item->id) }}" class="btn btn-danger" id="delete">Eliminar</a>
-                            </td>
                         </tr>
                         @endforeach
                         
@@ -80,7 +75,6 @@
                             <th>Email</th>
                             <th>Teléfono</th>
                             <th>Estado</th>
-                            <th>Acción</th>
                         </tr>
                     </tfoot>
                 </table>
