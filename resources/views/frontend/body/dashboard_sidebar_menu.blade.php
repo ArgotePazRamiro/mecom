@@ -32,11 +32,6 @@ $route = Route::current()->getName();
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#address"><i class="fi-rs-marker mr-10"></i>
-                    Mi Dirección
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {{ ($route == 'user.account.page') ? 'active' : '' }}"
                     href="{{ route('user.account.page') }}"><i class="fi-rs-user mr-10"></i>
                     Detalles de Cuenta
