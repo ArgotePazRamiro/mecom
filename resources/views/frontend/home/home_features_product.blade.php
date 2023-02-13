@@ -119,7 +119,7 @@
                                                 <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <a href="shop-cart.html" class="btn w-100 hover-up"><i class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
+                                        
                                     </div>
                                 </div>
                                 <!--End product Wrap-->
