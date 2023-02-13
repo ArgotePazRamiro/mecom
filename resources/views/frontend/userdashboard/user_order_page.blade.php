@@ -52,7 +52,7 @@ Mi Cuenta
                                                         <th>Fecha</th>
                                                         <th>Monto Total</th>
                                                         <th>Método de Pago</th>
-                                                        <th>Factura</th>
+                                                        <th>Recibo</th>
                                                         <th>Estado</th>
                                                         <th>Acciones</th>
                                                     </tr>
@@ -100,7 +100,7 @@ Mi Cuenta
                                                             </a>
                                                             <a href="{{ url('user/invoice_download/'.$order->id) }}"
                                                                 class="btn-sm btn-danger"><i class="fa fa-download"></i>
-                                                                Factura
+                                                                Recibo
                                                             </a>
                                                         </td>
                                                     </tr>

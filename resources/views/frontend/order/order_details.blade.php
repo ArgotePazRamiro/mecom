@@ -114,7 +114,7 @@ Mi Cuenta
 
                                         <h4>
                                             Detalles de Orden
-                                            <span class="text-danger">Factura: {{ $order->invoice_no }}</span>
+                                            <span class="text-danger">Recibo: {{ $order->invoice_no }}</span>
                                         </h4>
                                         <hr>
                                         <div class="card-body">
@@ -142,7 +142,7 @@ Mi Cuenta
                                                 </tr>
 
                                                 <tr>
-                                                    <th>Factura:</th>
+                                                    <th>Recibo:</th>
                                                     <th class="text-danger">{{ $order->invoice_no }}</th>
                                                 </tr>
 

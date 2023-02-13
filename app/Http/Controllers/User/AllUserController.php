@@ -68,7 +68,7 @@ class AllUserController extends Controller
 
                             ]);
 
-        return $pdf->download('Factura.pdf');
+        return $pdf->download('Recibo.pdf');
 
     }// End Method
 
@@ -122,7 +122,7 @@ class AllUserController extends Controller
         }else{
 
             $notification = array(
-                'message' => 'Código de Factura Inválido',
+                'message' => 'Código de Recibo Inválido',
                 'alert-type' => 'error',
             );
     

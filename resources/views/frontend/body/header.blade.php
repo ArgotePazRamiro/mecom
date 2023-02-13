@@ -21,6 +21,7 @@
                             <input onfocus="search_result_show()" onblur="search_result_hide()" name="search"
                                 id="search" placeholder="Buscar Productos..." />
                             <div id="searchProducts"></div>
+                            
                         </form>
 
                     </div>
@@ -90,22 +91,7 @@
                                             <a href="{{ route('dashboard') }}"><i class="fi fi-rs-user mr-10"></i>Mi
                                                 Cuenta</a>
                                         </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i
-                                                    class="fi fi-rs-location-alt mr-10"></i>Rastreo de orden</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-label mr-10"></i>Mis
-                                                cupones</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-heart mr-10"></i>Lista
-                                                de Deseos</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i
-                                                    class="fi fi-rs-settings-sliders mr-10"></i>Ajustes</a>
-                                        </li>
+                                        
                                         <li>
                                             <a href="{{ route('user.logout') }}"><i
                                                     class="fi fi-rs-sign-out mr-10"></i>Desconectar</a>

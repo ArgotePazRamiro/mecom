@@ -52,7 +52,7 @@ Página de Órdenes Retornadas
                                                         <th>Fecha</th>
                                                         <th>Monto Total</th>
                                                         <th>Método de Pago</th>
-                                                        <th>Factura</th>
+                                                        <th>Recibo</th>
                                                         <th>Razón de Retorno</th>
                                                         <th>Estado</th>
                                                         <th>Acciones</th>
@@ -93,7 +93,7 @@ Página de Órdenes Retornadas
                                                             </a>
                                                             <a href="{{ url('user/invoice_download/'.$order->id) }}"
                                                                 class="btn-sm btn-danger"><i class="fa fa-download"></i>
-                                                                Factura
+                                                                Recibo
                                                             </a>
                                                         </td>
                                                     </tr>

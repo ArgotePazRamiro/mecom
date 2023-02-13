@@ -94,7 +94,7 @@
             </td>
             <td>
                 <p class="font">
-                <h3><span style="color: green;">Factura:</span> {{ $order->invoice_no }}</h3>
+                <h3><span style="color: green;">Recibo:</span> {{ $order->invoice_no }}</h3>
                 Fecha de Orden: {{ $order->order_date }}<br>
                 Fecha de Entrega: {{ $order->delivered_date }}<br>
                 Tipo de Pago: {{ $order->payment_method }}</span>
