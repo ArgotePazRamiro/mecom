@@ -63,12 +63,6 @@
                                             </div>
                                             
                                             <div class="login_footer form-group mb-50">
-                                                <div class="chek-form">
-                                                    <div class="custome-checkbox">
-                                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
-                                                        <label class="form-check-label" for="exampleCheckbox1"><span>Recuérdame</span></label>
-                                                    </div>
-                                                </div>
                                                 <a class="text-muted" href="{{ route('password.request') }}">Olvidó su contraseña?</a>
                                             </div>
                                             <div class="form-group">
